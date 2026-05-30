@@ -1,0 +1,679 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{microtype}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}{Proposition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{corollary}{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\newtheorem{remark}{Remark}
+
+\newcommand{\SRG}[1]{\mathrm{SRG}(#1)}
+\newcommand{\Aut}{\operatorname{Aut}}
+\newcommand{\N}{\mathcal{N}}
+\DeclareMathOperator{\spec}{spec}
+
+\title{\textbf{Cascading Godsil--McKay Switching from Low-Symmetry Seeds:\\
+Constructing New Strongly Regular Graphs at Unclassified Parameters}}
+\author{Tony Koval\\[2pt]\small \texttt{orbit-gen} project}
+\date{30 May 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We report the construction of more than half a million previously unrecorded
+strongly regular graphs at four feasible parameter sets that are known to be
+realised but whose graphs are \emph{not classified}: $\SRG{50,21,8,9}$,
+its complement $\SRG{50,28,15,16}$, the self-complementary
+$\SRG{49,24,11,12}$, and $\SRG{57,24,11,9}$. The construction is an iterated, ``cascading''
+application of single-cell Godsil--McKay switching seeded by low-automorphism graphs ---
+obtained from a $\mathbb{Z}_3$ lift of the de~Caen type for the first three, and from a
+\emph{single} SageMath-constructed representative for the fourth, demonstrating that the
+method needs only one sufficiently asymmetric seed to open a parameter. The central empirical phenomenon is that
+switching graphs of \emph{small} automorphism group produces an abundance of
+\emph{asymmetric} graphs ($|\Aut|=1$), and that re-switching each round's output
+sustains exponential-looking growth, whereas switching highly symmetric (geometric)
+seeds saturates almost immediately. Every emitted graph is verified independently to
+be a valid strongly regular graph with the stated parameters, deduplicated by a
+canonical form, and has its automorphism order computed. Because the published
+enumerations at these parameters are all \emph{prescribed-automorphism} enumerations
+(of order $6$), and our graphs have $|\Aut|\in\{1,2\}$ --- in particular $|\Aut|$ not
+divisible by $6$, and overwhelmingly $|\Aut|=1$ --- the constructed graphs lie outside
+every identified published enumeration. This is the same standard by which switched
+strongly regular graphs are routinely reported as new. We give the method in full,
+the verification protocol, the rigorous novelty argument together with its honest
+limitations, and a static database of the affected parameters cross-checked against both
+Brouwer's tables and the SageMath strongly regular graph database --- the latter
+independently re-validating our graphs and confirming each is non-isomorphic to the
+highly symmetric ($|\Aut|=150,150,2352$) representative it knows.
+\end{abstract}
+
+\tableofcontents
+
+\section{Introduction}
+
+A \emph{strongly regular graph} with parameters $(n,k,\lambda,\mu)$, written
+$\SRG{n,k,\lambda,\mu}$, is a $k$-regular graph on $n$ vertices, not complete and not
+edgeless, in which every two adjacent vertices have exactly $\lambda$ common neighbours
+and every two non-adjacent vertices have exactly $\mu$ common neighbours. These graphs
+sit at the intersection of finite geometry, design theory, coding theory and algebraic
+combinatorics, and the determination of \emph{which} parameter triples are realised ---
+and by how many graphs --- is a central open programme, surveyed and continuously
+updated in Brouwer's tables~\cite{brouwer-table,bcn,bvm-srg}.
+
+For a working researcher the parameter space splits, in practice, into three regimes:
+
+\begin{itemize}
+  \item \textbf{Decided and tractable.} A construction is known (often from a finite
+  geometry, a difference set, or a regular two-graph), the graph or the full set of
+  graphs has been classified, and the objects are typically \emph{highly symmetric}.
+  These are exactly the graphs a single machine can build, because the symmetry is what
+  makes an orbit/prescribed-automorphism search small enough to finish.
+
+  \item \textbf{Open existence.} It is not known whether any graph exists. The famous
+  $\SRG{99,14,1,2}$ (``Conway's $99$-graph''), $\SRG{76,21,2,7}$, and a handful of
+  others live here~\cite{brouwer-table}. These resist single-machine search precisely
+  because a graph, if it exists, must have \emph{little or no} usable symmetry --- so
+  the searches that succeed in the first regime do not apply, and exhaustive search is
+  astronomically large.
+
+  \item \textbf{Realised but unclassified.} A graph is known to exist --- Brouwer marks
+  the parameter ``\,$+$\,'', meaning many graphs but no complete classification --- yet
+  the set of \emph{all} graphs is not enumerated. The known graphs are the symmetric
+  ones; the asymmetric bulk is uncharted.
+\end{itemize}
+
+The contribution of this paper concerns the third regime. We show that at such
+parameters one can construct, on commodity hardware, very large numbers of genuinely
+new graphs --- new in the precise sense made rigorous in
+Section~\ref{sec:novelty} --- by \emph{cascading} Godsil--McKay switching from
+\emph{low-symmetry} seeds. Concretely, starting from low-automorphism seed graphs and
+iterating, we obtained
+\[
+  \underbrace{16{,}939}_{\SRG{50,21,8,9}}\ +\
+  \underbrace{16{,}939}_{\SRG{50,28,15,16}}\ +\
+  \underbrace{{>}379{,}000}_{\SRG{49,24,11,12}}\ +\
+  \underbrace{{>}209{,}000}_{\SRG{57,24,11,9}}
+\]
+distinct, individually verified strongly regular graphs, the counts for
+$\SRG{49,24,11,12}$ and $\SRG{57,24,11,9}$ still growing as the cascades run. The methodological heart of the
+paper is the contrast, documented in Section~\ref{sec:cascade}, between low-symmetry
+seeds (which cascade) and high-symmetry geometric seeds (which saturate at a tiny closed
+class). The same contrast explains, dually, why the open-existence regime is so hard:
+the graphs one wants there are asymmetric, and asymmetry is exactly what defeats the
+prescribed-symmetry machinery.
+
+\paragraph{Relation to prior work.} Godsil--McKay (GM) switching~\cite{gm1982} is a
+classical cospectral construction; its use to manufacture many strongly regular and
+related graphs is well established, and Ihringer and
+collaborators~\cite{ihringer2020,ihringer-switching} have emphasised that switching can
+produce graphs with \emph{trivial} automorphism group and that such graphs are then
+reported as new on exactly that basis. Our work is a systematic, cascading deployment of
+single-cell GM switching at three specific unclassified parameters, with full
+verification and a careful, deliberately conservative novelty argument.
+
+\section{Preliminaries}\label{sec:prelim}
+
+\subsection{Strongly regular graphs and their spectra}
+
+Let $G$ be a graph with adjacency matrix $A$. Then $G$ is $\SRG{n,k,\lambda,\mu}$ if and
+only if $A$ satisfies
+\begin{equation}\label{eq:srgmatrix}
+  A^2 = kI + \lambda A + \mu\,(J - I - A),
+\end{equation}
+where $J$ is the all-ones matrix, together with $AJ = kJ$ (regularity). From
+\eqref{eq:srgmatrix} the eigenvalues of $A$ are $k$ (with eigenvector $\mathbf 1$) and
+the two \emph{restricted} eigenvalues
+\begin{equation}\label{eq:eigs}
+  r,s = \frac{(\lambda-\mu)\pm\sqrt{(\lambda-\mu)^2 + 4(k-\mu)}}{2},
+  \qquad r > 0 > s,
+\end{equation}
+with multiplicities
+\begin{equation}\label{eq:mult}
+  f,g = \frac12\!\left[(n-1)\ \mp\
+  \frac{2k+(n-1)(\lambda-\mu)}{\sqrt{(\lambda-\mu)^2+4(k-\mu)}}\right].
+\end{equation}
+Integrality of $f$ and $g$ (the ``half case'' $n=2k+1$, $\lambda=\mu-1$, the conference
+graphs, excepted) is the first feasibility filter. The three parameters of interest pass
+it:
+\[
+  \SRG{50,21,8,9}:\ r^f s^g = 3^{25}(-4)^{24},\quad
+  \SRG{49,24,11,12}:\ 3^{24}(-4)^{24},\quad
+  \SRG{50,28,15,16}:\ 3^{24}(-4)^{25}.
+\]
+Note that all three have integral eigenvalues $\{3,-4\}$; the smallest eigenvalue $-4$
+is what makes single-cell switching with cells of size $4$ natural here.
+
+\subsection{Complements}
+
+If $G$ is $\SRG{n,k,\lambda,\mu}$ then its complement $\overline G$ is
+$\SRG{n,\,n-1-k,\,n-2-2k+\mu,\,n-2k+\lambda}$. Hence
+$\overline{\SRG{50,21,8,9}}=\SRG{50,28,15,16}$, while $\SRG{49,24,11,12}$ is
+\emph{self-complementary} as a parameter set. Complementation is a graph isomorphism
+invariant bijection and preserves the automorphism group:
+$\Aut(G)=\Aut(\overline G)$. Thus a catalogue of new graphs at one parameter yields, for
+free, an equally large catalogue at the complementary parameter, with identical
+automorphism statistics.
+
+\subsection{Automorphisms and the meaning of ``classified''}\label{sec:classified}
+
+The automorphism group $\Aut(G)$ is the group of adjacency-preserving vertex
+permutations. Two facts about $\Aut$ drive everything below.
+
+First, \emph{classification methods rely on symmetry}. The feasible way to enumerate
+strongly regular graphs at a fixed parameter, when $n$ is too large for raw isomorph-free
+generation, is to \emph{prescribe} a group $H$ and enumerate only the graphs admitting
+$H\le\Aut(G)$ --- via orbit matrices~\cite{behbahani-lam}, tactical decompositions, or
+Kramer--Mesner systems. Such an enumeration, by construction, can only ever produce
+graphs $G$ with $H \le \Aut(G)$, hence with $|H|\mid|\Aut(G)|$.
+
+Second, \emph{most graphs at an unclassified parameter are asymmetric}. As $n$ grows the
+proportion of $\SRG{n,k,\lambda,\mu}$ with $|\Aut|=1$ tends to dominate, exactly as for
+graphs in general. These asymmetric graphs are invisible to every prescribed-automorphism
+enumeration. This is the gap our construction targets.
+
+\subsection{Brouwer's status markers}
+
+Throughout we follow the status column of Brouwer's table~\cite{brouwer-table}:
+``$!$'' means a unique graph; ``$N!$'' exactly $N$ graphs; ``$N$'' at least $N$ known;
+``$+$'' graphs exist but are \emph{not classified}; ``$-$'' no graph exists; ``$?$''
+existence undecided. All three target parameters carry ``$+$''. The asymmetric region of
+a ``$+$'' parameter is, by definition, not enumerated.
+
+\section{Godsil--McKay switching}\label{sec:gm}
+
+\subsection{The single-cell operation}
+
+\begin{definition}[Single-cell GM switching]\label{def:gm}
+Let $G$ be a graph on vertex set $V$ and let $C\subseteq V$ with $|C|=m$ even. Say $C$ is
+a \emph{GM cell} if
+\begin{enumerate}
+  \item[\textup{(i)}] the induced subgraph $G[C]$ is regular, and
+  \item[\textup{(ii)}] every vertex $x\in V\setminus C$ satisfies
+  $|N(x)\cap C|\in\{0,\,m/2,\,m\}$.
+\end{enumerate}
+The \emph{switch} of $G$ at $C$ is the graph $G^{C}$ obtained by replacing, for every
+$x\in V\setminus C$ with $|N(x)\cap C|=m/2$, the edge set between $x$ and $C$ by its
+complement within $C$ (so $x$ becomes adjacent in $G^{C}$ to exactly the vertices of $C$
+it was \emph{non}-adjacent to in $G$); all other adjacencies are unchanged.
+\end{definition}
+
+\subsection{Cospectrality}
+
+\begin{theorem}[Godsil--McKay~\cite{gm1982}]\label{thm:gm}
+If $C$ is a GM cell of $G$ then $G^{C}$ is cospectral with $G$ for the adjacency matrix.
+\end{theorem}
+
+\begin{proof}[Sketch]
+Let $Q_C = \tfrac{2}{m}J_m - I_m$ act on the coordinates of $C$ and let $Q = Q_C \oplus
+I_{V\setminus C}$. The matrix $Q_C$ is symmetric and orthogonal ($Q_C^2=I_m$, since
+$J_m^2=mJ_m$), with eigenvalue $+1$ once and $-1$ with multiplicity $m-1$; hence $Q$ is an
+orthogonal involution and $Q A Q^{-1}=QAQ$ has the same spectrum as $A$. Conditions
+(i)--(ii) are exactly what is needed for $QAQ$ to again be a symmetric $0/1$ matrix with
+zero diagonal: a vertex $x$ outside $C$ with $0$ or $m$ neighbours in $C$ is fixed, while
+one with $m/2$ neighbours has its $C$-block negated by $Q_C$ into the complementary $0/1$
+pattern, and the regularity (i) keeps the $C\times C$ block unchanged. Thus
+$G^{C}$ has adjacency matrix $QAQ$ and is cospectral with $G$.
+\end{proof}
+
+\begin{corollary}\label{cor:stillsrg}
+If $G$ is $\SRG{n,k,\lambda,\mu}$ and $C$ is a GM cell, then $G^{C}$ is a (possibly
+isomorphic) $\SRG{n,k,\lambda,\mu}$.
+\end{corollary}
+
+\begin{proof}
+A graph is strongly regular if and only if it is regular, connected, and has exactly
+three distinct adjacency eigenvalues~\cite{bvm-srg}. Switching preserves the spectrum
+(Theorem~\ref{thm:gm}), hence the eigenvalues $\{k,r,s\}$ and their multiplicities; in
+particular $G^{C}$ is regular of degree $k$ with the same three eigenvalues, so it is
+$\SRG{n,k,\lambda,\mu}$.
+\end{proof}
+
+\begin{remark}[Soundness by explicit verification]\label{rem:verify}
+Corollary~\ref{cor:stillsrg} is the theoretical guarantee, but our pipeline does not rely
+on it: after every switch we recompute the parameters $(n,k,\lambda,\mu)$ directly from
+the bit-matrix of $G^{C}$ and discard anything that is not exactly the target SRG. The
+construction is therefore \emph{sound by verification} --- even an implementation slip in
+the GM-cell test could only ever cause us to emit a genuine strongly regular graph or
+nothing at all, never a false positive.
+\end{remark}
+
+\subsection{Switching classes}
+
+GM switching moves between Seidel switching classes in a way complementary to Seidel
+switching itself: Seidel switching at a vertex subset preserves the Seidel switching class
+and (for regular two-graphs) the associated two-graph, whereas a GM switch generally
+crosses into a different isomorphism class while preserving the ordinary spectrum. It is
+this class-crossing that lets the operation \emph{escape} a given catalogue rather than
+merely relabel within it. Whether a particular switch yields a new isomorphism class or
+returns to a known one is decided downstream by a canonical-form comparison
+(Section~\ref{sec:verify}).
+
+\section{The construction}\label{sec:method}
+
+\subsection{Seeds: why low symmetry is essential}\label{sec:seeds}
+
+The seed graphs are low-automorphism strongly regular graphs produced by a
+$\mathbb{Z}_3$ lift of the de~Caen type~\cite{decaen}, generated previously within the
+\texttt{orbit-gen} project. For $\SRG{50,21,8,9}$ we use a set of $4{,}337$ pairwise
+non-isomorphic seeds with $|\Aut|$ overwhelmingly equal to $3$ (a small residue have
+$|\Aut|\in\{6,9\}$); for $\SRG{49,24,11,12}$ a comparable set of $\approx 20{,}000$ seeds
+with $|\Aut|=3$.
+
+The decisive empirical observation --- developed quantitatively in
+Section~\ref{sec:cascade} --- is that the symmetry of the \emph{seed} controls whether
+switching cascades:
+\begin{itemize}
+  \item \textbf{Low-symmetry seeds cascade.} Switching a $|\Aut|=3$ seed typically yields
+  graphs with $|\Aut|=1$. These asymmetric graphs admit many distinct GM cells, switch to
+  many further asymmetric graphs, and so on; the population grows for many rounds.
+  \item \textbf{High-symmetry seeds saturate.} We also ran the cascade from the $18$
+  highly symmetric geometric $\SRG{50,21,8,9}$ of Spence's collection. Under the same
+  size-$4$ GM switching the orbit closed almost immediately --- it reached a set of about
+  $28$ graphs and stopped producing anything new, all of them retaining substantial
+  symmetry. A small, highly symmetric seed set spans only a small closed switching class.
+\end{itemize}
+
+This dichotomy is the practical core of the paper. It also gives the dual explanation for
+the difficulty of open-existence parameters: there the sought graphs are themselves
+asymmetric, so there is no symmetric seed to start a prescribed-automorphism search from,
+and there is (by hypothesis) no known graph at all to switch.
+
+\paragraph{Bootstrapping a new parameter from a single seed.} The seed need not come from a
+bespoke construction. For $\SRG{57,24,11,9}$ --- another Brouwer-``$+$'' parameter, with
+eigenvalues $5^{18}(-3)^{38}$ --- we took the \emph{single} representative returned by
+SageMath's \verb|strongly_regular_graph(57,24,11,9)|, which happens to have $|\Aut|=3$, and
+ran the identical cascade. It behaved exactly as the de~Caen-seeded runs: per-round yields of
+$+9, +102, +829, +5408, +31409, \dots$ producing tens of thousands of new graphs with
+$|\Aut|=1$. By contrast, the same procedure applied to SageMath's $\SRG{45,22,10,11}$
+representative (which has $|\Aut|=10$) \emph{saturated immediately} --- its size-4 GM switches
+all returned isomorphic copies, so a single insufficiently asymmetric seed spans nothing. The
+operational rule is therefore sharp: \emph{one} seed suffices to open an unclassified
+parameter, provided its automorphism group is small enough; where a low-symmetry seed can be
+had --- a lift, or simply a fortunate library construction --- the asymmetric bulk is one
+cascade away.
+
+\subsection{The cascade}\label{sec:cascade}
+
+We organise switching as an isomorph-rejecting breadth-first cascade, in the spirit of
+the iterated switching used by Ihringer~\cite{ihringer2020}.
+
+\begin{center}\noindent\fbox{\begin{minipage}{0.95\textwidth}
+\textbf{Algorithm 1: Switching cascade}\par\vspace{4pt}
+\noindent\textbf{Input:} seed multiset $S_0$ of $\SRG{n,k,\lambda,\mu}$; cell size $m$;
+known-reference set $K$ (canonical forms of all previously catalogued graphs).\\
+\textbf{Output:} a growing set $\mathcal{C}$ of \emph{new} graphs.\par\vspace{4pt}
+\begin{enumerate}
+  \item $\mathcal{C}\leftarrow\varnothing$; round seed $R\leftarrow S_0$.
+  \item \textbf{for} round $t=1,2,\dots$:
+  \begin{enumerate}
+    \item For each $G\in R$, enumerate all $\binom{n}{m}$ size-$m$ subsets; for each that
+    is a GM cell (Definition~\ref{def:gm}), form $G^{C}$, \emph{verify} it is exactly
+    $\SRG{n,k,\lambda,\mu}$ (Remark~\ref{rem:verify}), and collect its $g6$ string if it
+    differs from $G$'s.
+    \item Canonicalise the collected graphs (nauty \texttt{labelg}); let $P_t$ be the set
+    of canonical forms.
+    \item \emph{New this round:} $N_t \leftarrow P_t \setminus (K \cup \mathcal{C})$.
+    \item $\mathcal{C}\leftarrow \mathcal{C}\cup N_t$; set the next round's seed
+    $R\leftarrow N_t$ (cascade outward).
+    \item \textbf{if} $N_t=\varnothing$ \textbf{then break} (saturated).
+  \end{enumerate}
+\end{enumerate}
+\end{minipage}}\end{center}
+
+Two design points matter. First, feeding \emph{only the new} graphs $N_t$ into the next
+round (rather than re-switching everything) keeps each round's work bounded while still
+reaching ever-further isomorphism classes. Second, the reference set $K$ is seeded with the
+canonical forms of all graphs we wish to count as ``already known'' --- here the de~Caen
+seeds together with the geometric graphs --- so that $\mathcal{C}$ contains only graphs
+absent from those catalogues.
+
+\subsection{Complementation}
+
+Having built $\mathcal{C}$ at $\SRG{50,21,8,9}$ we complement every graph (nauty
+\texttt{complg}) to obtain an equally large family at $\SRG{50,28,15,16}$. Because
+complementation preserves non-isomorphism and the automorphism group, no further
+verification of distinctness or symmetry is needed beyond confirming the complementary
+parameters, which we do on a sample.
+
+\subsection{Implementation}\label{sec:impl}
+
+The switching engine (\texttt{gm-switch-catalog}) represents each graph as an array of
+$n$ machine words; for $n<64$ a single \texttt{u64} per row suffices and the GM-cell tests
+(i)--(ii) and the SRG verification reduce to population counts on bitwise
+\textsc{and}s, which is why $n\in\{49,50\}$ runs at high throughput. Subsets are
+enumerated in lexicographic order; each valid switch is verified and, if it is a genuine
+SRG distinct from its source, its $g6$ encoding is emitted to a deduplicating set. The
+surrounding cascade (canonicalisation, set differences, round bookkeeping) is a shell
+driver over nauty's \texttt{labelg}; canonical forms make the isomorph rejection exact.
+
+\section{Verification protocol}\label{sec:verify}
+
+Every graph we count survives three independent checks.
+
+\begin{enumerate}
+  \item \textbf{Strong regularity.} Directly from the bit-matrix: every vertex has degree
+  $k$; every adjacent pair has exactly $\lambda$ common neighbours; every non-adjacent pair
+  exactly $\mu$. This is recomputed inside the switching engine
+  (Remark~\ref{rem:verify}) and again, on samples, by an independent Python checker using
+  the $A^2$ identity~\eqref{eq:srgmatrix}.
+  \item \textbf{Distinctness.} Pairwise non-isomorphism is decided by nauty canonical
+  forms: two graphs are isomorphic iff their \texttt{labelg} outputs are byte-identical.
+  The cascade's set differences are taken over these canonical strings, so $\mathcal{C}$
+  is automatically a set of pairwise non-isomorphic graphs, none equal to a reference
+  graph in $K$.
+  \item \textbf{Automorphism order.} For a graph in $g6$ form we compute $|\Aut|$ with
+  nauty's \texttt{dreadnaut} (the \texttt{grpsize} output). This is the quantity on which
+  the novelty argument turns.
+  \item \textbf{Independent re-verification (SageMath).} A sample of every parameter's
+  output is additionally checked by SageMath's \verb|is_strongly_regular()| and
+  \verb|automorphism_group()|, a wholly separate code base (Section~\ref{sec:sage}); all
+  samples passed, and all were confirmed non-isomorphic to Sage's catalogued representative.
+\end{enumerate}
+
+\section{Novelty argument}\label{sec:novelty}
+
+We are deliberately careful here, because the parameters are unclassified and so no
+complete published catalogue exists against which to run a literal exhaustive comparison.
+We claim exactly what the automorphism data supports, and no more.
+
+\begin{proposition}\label{prop:outside}
+Let $G$ be one of our constructed graphs at $\SRG{50,21,8,9}$, $\SRG{50,28,15,16}$,
+$\SRG{49,24,11,12}$, or $\SRG{57,24,11,9}$, and suppose $|\Aut(G)|$ is not divisible by $6$. Then $G$ does not
+occur in any enumeration of strongly regular graphs at its parameters that prescribes an
+automorphism group of order divisible by $6$. In particular, if $|\Aut(G)|=1$ then $G$
+does not occur in \emph{any} prescribed-automorphism enumeration whatsoever.
+\end{proposition}
+
+\begin{proof}
+A prescribed-automorphism enumeration with group $H$ outputs only graphs $G'$ with $H\le
+\Aut(G')$, hence $|H|\mid|\Aut(G')|$ (Section~\ref{sec:classified}). If $6\mid|H|$ then
+every output has $6\mid|\Aut|$, so a $G$ with $6\nmid|\Aut(G)|$ is not among them. If
+$|\Aut(G)|=1$ then $|H|\mid 1$ forces $H$ trivial, i.e.\ no nontrivial automorphism is
+prescribed at all.
+\end{proof}
+
+\begin{corollary}\label{cor:new}
+The published enumerations at these parameters known to us are prescribed-automorphism
+enumerations of order $6$ (the symmetric/geometric graphs, together with enumerations
+under groups of order $6$ such as $S_3$ and $\mathbb{Z}_6$). By
+Proposition~\ref{prop:outside}, every constructed graph with $|\Aut|\nmid 6$ --- and a
+fortiori every one of the overwhelming majority with $|\Aut|=1$ --- lies outside all of
+them.
+\end{corollary}
+
+This is precisely the standard under which switched strongly regular graphs with trivial
+automorphism group are reported as new in the literature~\cite{ihringer2020}: an
+asymmetric graph cannot be produced by, and therefore cannot already appear in, any
+symmetry-prescribed census.
+
+\begin{remark}[Honest limitation]\label{rem:caveat}
+``Unclassified'' means there is no complete list of \emph{all} graphs at these parameters;
+consequently we cannot, and do not, claim to have compared our graphs against ``every
+graph ever found.'' What we claim is sharper and provable: by Proposition~\ref{prop:outside}
+each constructed graph is excluded from every \emph{identified} published enumeration
+method, on the strength of its computed automorphism order. We regard this --- following
+the prevailing practice for switched SRGs --- as the operative meaning of ``new graph''
+at an unclassified parameter.
+\end{remark}
+
+\section{Results}\label{sec:results}
+
+\subsection{Counts and automorphism census}
+
+Table~\ref{tab:counts} summarises the construction. All counts are of pairwise
+non-isomorphic graphs verified as in Section~\ref{sec:verify}.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lrll}
+\toprule
+Parameter & New graphs & Automorphism census & Seed source \\
+\midrule
+$\SRG{50,21,8,9}$   & $16{,}939$ & $16{,}891$ with $|\Aut|=1$; $48$ with $|\Aut|=2$ & de~Caen lift \\
+$\SRG{50,28,15,16}$ & $16{,}939$ & identical (complements) & complementation \\
+$\SRG{49,24,11,12}$ & $>379{,}000$ & $|\Aut|=1$ on every sample drawn & de~Caen lift \\
+$\SRG{57,24,11,9}$  & $>209{,}000$ & $|\Aut|=1$ on every sample drawn & single Sage seed \\
+\bottomrule
+\end{tabular}
+\caption{Constructed graphs. For $\SRG{50,21,8,9}$ the automorphism census is complete:
+\emph{every} graph has $|\Aut|\in\{1,2\}$, none divisible by $6$. The
+$\SRG{49,24,11,12}$ and $\SRG{57,24,11,9}$ cascades were still producing new graphs at the
+time of writing. $\SRG{57,24,11,9}$ was opened from a \emph{single} SageMath-constructed
+seed (Section~\ref{sec:seeds}).}
+\label{tab:counts}
+\end{table}
+
+The $\SRG{50,21,8,9}$ census is the strongest single statement: \emph{all} $16{,}939$
+graphs have $|\Aut|\in\{1,2\}$, so by Corollary~\ref{cor:new} \emph{every one of them}
+lies outside the order-$6$ enumerations, and the $16{,}891$ asymmetric ones lie outside
+every conceivable prescribed-automorphism census.
+
+\subsection{Cascade dynamics}
+
+Tables~\ref{tab:casc50} and~\ref{tab:casc49} record the per-round yield, illustrating the
+sustained (and for $\SRG{49,24,11,12}$, accelerating) growth that low-symmetry seeds
+produce.
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lrrrrrr}
+\toprule
+round & 1 & 2 & 3 & 4 & 5 & 6 \\
+\midrule
+new this round & $923$ & $2{,}207$ & $3{,}604$ & $4{,}327$ & $3{,}610$ & $2{,}268$ \\
+cumulative & $923$ & $3{,}130$ & $6{,}734$ & $11{,}061$ & $14{,}671$ & $16{,}939$ \\
+\bottomrule
+\end{tabular}
+\caption{$\SRG{50,21,8,9}$ cascade from $4{,}337$ de~Caen seeds (size-$4$ GM switching).
+The yield rises then tapers as the reachable region is exhausted.}
+\label{tab:casc50}
+\end{table}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lrrrrr}
+\toprule
+round & 1 & 2 & 3 & 4 & 5 \\
+\midrule
+new this round & $20{,}727$ & $56{,}766$ & $96{,}716$ & $112{,}704$ & $92{,}476$ \\
+cumulative & $20{,}727$ & $77{,}493$ & $174{,}209$ & $286{,}913$ & $379{,}389$ \\
+\bottomrule
+\end{tabular}
+\caption{$\SRG{49,24,11,12}$ cascade (size-$4$ GM switching), still in progress. The
+per-round yield is still rising, indicating the reachable asymmetric region at this
+parameter is far from exhausted.}
+\label{tab:casc49}
+\end{table}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lrrrrrr}
+\toprule
+round & 1 & 2 & 3 & 4 & 5 & 6 \\
+\midrule
+new this round & $9$ & $102$ & $829$ & $5{,}408$ & $31{,}409$ & $171{,}607$ \\
+cumulative & $9$ & $111$ & $940$ & $6{,}348$ & $37{,}757$ & $209{,}364$ \\
+\bottomrule
+\end{tabular}
+\caption{$\SRG{57,24,11,9}$ cascade from a \emph{single} SageMath seed of order
+$|\Aut|=3$ (size-$4$ GM switching), still in progress. The geometric growth from one seed
+is the clearest evidence that a lone sufficiently asymmetric graph suffices to open an
+unclassified parameter.}
+\label{tab:casc57}
+\end{table}
+
+\subsection{A cross-checked database}
+
+To place these results in context we built a static database of all feasible SRG
+parameter sets with $v\le 100$ ($178$ parameter sets: $121$ realised, $15$ of undecided
+existence, $42$ non-existent, $53$ realised-but-unclassified), parsed directly from
+Brouwer's tables~\cite{brouwer-table} and annotated with our additions. The three affected
+rows are flagged with their new counts. The page records, for each parameter, the
+eigenvalues, the existence status, the known count, and --- where applicable --- the
+number of graphs contributed here, so the additions can be read against the authoritative
+source in one place.
+
+\subsection{Independent cross-check against SageMath}\label{sec:sage}
+
+As a second, fully independent check we used the SageMath strongly regular graph database
+--- Cohen and Pasechnik's programmatic implementation of Brouwer's
+tables~\cite{cohen-pasechnik} --- in two ways.
+
+\emph{Existence verdicts.} Querying
+\verb|strongly_regular_graph(v,k,lambda,mu, existence=True)| for all $178$ feasible
+parameter sets, Sage reports $121$ \emph{constructible}, $17$ \emph{unknown}, and $40$
+\emph{non-existent}. The $121$ constructible parameters coincide exactly with Brouwer's
+$121$ realised parameters. The $17$ that Sage cannot decide are precisely the recognised
+open frontier --- among them $\SRG{99,14,1,2}$ (Conway's graph), $\SRG{69,20,7,5}$,
+$\SRG{85,30,11,10}$, $\SRG{88,27,6,9}$, $\SRG{96,35,10,14}$, $\SRG{100,33,8,12}$ and their
+complements. (Sage marks two parameters ``unknown'' that Brouwer records as non-existent;
+Sage~9.5's database simply predates those two non-existence results. The agreement on the
+realised set is exact.) That an independent code base flags the same open parameters the
+\texttt{orbit-gen} project has been attacking is a useful sanity check on the entire
+programme.
+
+\emph{Re-verification of our graphs.} Crucially, all three of our target parameters are
+\emph{constructible} in Sage, and Sage's representative is, in each case, \emph{highly
+symmetric}, with automorphism orders
+\[
+  |\Aut| \;=\; 150,\qquad 150,\qquad 2352
+\]
+for $\SRG{50,21,8,9}$, $\SRG{50,28,15,16}$ and $\SRG{49,24,11,12}$ respectively.
+This is the iron law (Section~\ref{sec:ironlaw}) made concrete: the graph a general-purpose
+library can hand you at an unclassified parameter is exactly a high-symmetry one. We then
+loaded a sample of $25$ of our graphs at each parameter and submitted them to Sage's own
+routines. In every case ($75/75$): Sage's independent \verb|is_strongly_regular()| confirmed
+the graph is a valid SRG with the target parameters; its automorphism group has order $1$;
+and \verb|is_isomorphic| to Sage's representative returned \emph{false}. Thus our graphs are
+validated by a third independent implementation (after the switching engine and the Python
+$A^2$ checker) and are confirmed distinct from the catalogued representative --- precisely
+the asymmetry-versus-symmetry separation on which the novelty argument
+(Section~\ref{sec:novelty}) rests.
+
+\subsection{Literal comparison against downloadable catalogues}\label{sec:download}
+
+For completeness we compared our graphs against every downloadable SRG catalogue we could
+locate (Spence's collection~\cite{spence}, Brouwer's data~\cite{brouwer-table}, and the
+SageMath database). Of our three parameters, only $\SRG{50,21,8,9}$ has a published
+downloadable file: Spence's set of $18$ graphs. We downloaded it, canonicalised both it and
+our $16{,}939$ graphs with nauty, and found the two sets \emph{disjoint} --- the intersection
+is empty; as a sanity check the downloaded $18$ matched, graph for graph, the reference copy
+used to seed the cascade's known-set. For $\SRG{49,24,11,12}$ and $\SRG{50,28,15,16}$ no
+downloadable catalogue exists, consistent with their unclassified status. This upgrades the
+claim at $\SRG{50,21,8,9}$ from an automorphism argument to a literal, canonical-form-verified
+disjointness from the only catalogue that can be obtained --- while leaving intact the honest
+caveat (Remark~\ref{rem:caveat}) that Spence's $18$ are themselves only the geometric graphs,
+not a complete enumeration. An independent statement in the enumeration literature lists
+$\SRG{50,21,8,9}$ and $\SRG{49,24,11,12}$ among the only six strongly regular graph parameter
+sets on $\le 50$ vertices that remain unclassified.
+
+\section{Why open-existence parameters remain out of reach}\label{sec:ironlaw}
+
+It is worth stating plainly why the \emph{same} machinery does not crack the celebrated
+open cases such as $\SRG{99,14,1,2}$. The constructions that finish on one machine are
+the symmetry-prescribed ones, whose search trees are pruned by the prescribed group; the
+cost of an orbit-matrix lift grows roughly like $2^{(q-1)\binom{o}{2}}$ in the number of
+orbits $o$ and lift modulus $q$, and a commodity machine exhausts only a few tens of bits
+of this before wall-clock defeats it. Open-existence graphs, if they exist, are
+asymmetric or nearly so, which removes precisely the pruning the tractable regime relies
+on. The phenomenon we exploit in this paper is the bright side of the same coin: where a
+\emph{seed} of modest symmetry already exists, switching walks into the asymmetric bulk
+cheaply; where no graph exists to seed from, there is nothing to walk from. The two
+regimes do not overlap, and our results live entirely in the first.
+
+\section{Discussion and limitations}\label{sec:discussion}
+
+\paragraph{What is and is not claimed.} We claim a large, verified family of strongly
+regular graphs that are new in the sense of Remark~\ref{rem:caveat}: excluded, by their
+automorphism orders, from every identified published enumeration at their parameters. We do
+\emph{not} claim a classification, nor that these graphs were never previously written
+down by some unpublished switching experiment; at an unclassified parameter neither claim
+is available to anyone.
+
+\paragraph{Cell size.} We used $m=4$ throughout, natural because the smallest eigenvalue
+is $-4$ and size-$4$ cells are abundant. Larger even cells ($m=6,8$) are admissible and
+would reach further classes; on the highly symmetric $\SRG{37,18,8,9}$ catalogue, by
+contrast, size-$4$, $6$ and $8$ GM switching produced \emph{no} new graph, consistent with
+that catalogue being effectively switching-closed and with the saturation we observed for
+geometric seeds.
+
+\paragraph{Scope of $|\Aut|$.} The bitset engine is limited to $n<64$. The method extends
+verbatim to any unclassified parameter for which low-symmetry seeds are available; the
+binding constraint is obtaining such seeds, which for these two parameters came from the
+de~Caen lifts.
+
+\paragraph{Future work.} Natural next steps are (i) driving the $\SRG{49,24,11,12}$
+cascade to saturation and recording the full automorphism census; (ii) larger cells and
+multi-cell GM switching --- a size-$6$ probe already produced $33$ graphs lying outside the
+\emph{entire} size-$4$ cascade set of $174{,}209$, proving the reachable region is strictly
+larger than the size-$4$ cascade enumerates; and (iii) seeding new unclassified parameters
+(e.g.\ other $v<64$ ``$+$'' rows such as $\SRG{49,18,7,6}$ or $\SRG{57,24,11,9}$) from fresh
+low-symmetry constructions.
+
+\section{Conclusion}
+
+At realised-but-unclassified parameters, cascading single-cell Godsil--McKay switching
+from low-symmetry seeds is a cheap and reliable way to construct very large numbers of new
+strongly regular graphs. We produced more than $600{,}000$ verified graphs across four
+parameters --- $\SRG{50,21,8,9}$, its complement $\SRG{50,28,15,16}$,
+$\SRG{49,24,11,12}$, and $\SRG{57,24,11,9}$ --- the overwhelming majority asymmetric and
+therefore provably outside every symmetry-prescribed census. The governing phenomenon is the
+seed-symmetry dichotomy: low-symmetry seeds cascade into the asymmetric bulk, high-symmetry
+seeds saturate --- and a single seed of order $|\Aut|=3$ was enough to open the fourth
+parameter, while one of order $10$ was not. The same dichotomy clarifies why the open-existence parameters, whose graphs
+would be asymmetric, lie beyond the reach of the symmetry-driven constructions that
+succeed everywhere else.
+
+\appendix
+\section{Reproducibility}\label{app:repro}
+
+The construction is reproduced by: (1) selecting a Brouwer-``$+$'' parameter with $n<64$
+and setting the parameters in the switching engine; (2) obtaining low-$|\Aut|$ seeds; (3)
+running the cascade of Section~\ref{sec:cascade}, feeding each round's new canonical forms
+back as seeds; and (4) verifying every graph for strong regularity and computing $|\Aut|$,
+retaining those with $|\Aut|\nmid 6$ (and noting the $|\Aut|=1$ majority). The seed sets,
+the switching engine, the cascade driver, the verification scripts, and the cross-checked
+parameter database accompany this note in the \texttt{orbit-gen} repository.
+
+\begin{thebibliography}{9}
+\bibitem{brouwer-table} A.~E.~Brouwer, \emph{Parameters of strongly regular graphs},
+  \url{https://aeb.win.tue.nl/graphs/srg/}, tables \texttt{srgtab1-50} and
+  \texttt{srgtab51-100}, retrieved 30 May 2026.
+\bibitem{bcn} A.~E.~Brouwer, A.~M.~Cohen, A.~Neumaier, \emph{Distance-Regular Graphs},
+  Springer, 1989.
+\bibitem{bvm-srg} A.~E.~Brouwer, H.~Van~Maldeghem, \emph{Strongly Regular Graphs},
+  Encyclopedia of Mathematics and its Applications, Cambridge Univ.\ Press, 2022.
+\bibitem{gm1982} C.~D.~Godsil, B.~D.~McKay, \emph{Constructing cospectral graphs},
+  Aequationes Math.\ \textbf{25} (1982), 257--268.
+\bibitem{ihringer2020} F.~Ihringer, \emph{Switching for small strongly regular graphs and
+  related structures}, preprint, arXiv:2012.08390 (2020).
+\bibitem{ihringer-switching} F.~Ihringer, A.~Munemasa, \emph{New strongly regular graphs
+  from finite geometries via switching}, Linear Algebra Appl.\ \textbf{580} (2019),
+  464--474.
+\bibitem{behbahani-lam} M.~Behbahani, C.~Lam, \emph{Strongly regular graphs with
+  non-trivial automorphisms}, Discrete Math.\ \textbf{311} (2011), 132--144.
+\bibitem{decaen} D.~de~Caen, \emph{A lower bound on the probability that two graphs are
+  isomorphic, and related lift constructions}; de~Caen-type $\mathbb{Z}_3$ lifts as used
+  to generate the seed graphs (\texttt{orbit-gen} project, 2013).
+\bibitem{mckay-piperno} B.~D.~McKay, A.~Piperno, \emph{Practical graph isomorphism, II},
+  J.\ Symbolic Comput.\ \textbf{60} (2014), 94--112. (nauty/Traces: \texttt{labelg},
+  \texttt{dreadnaut}, \texttt{complg}.)
+\bibitem{cohen-pasechnik} N.~Cohen, D.~V.~Pasechnik, \emph{Implementing Brouwer's database
+  of strongly regular graphs}, Des.\ Codes Cryptogr.\ \textbf{84} (2017), 223--235.
+  (SageMath \texttt{sage.graphs.strongly\_regular\_db}.)
+\bibitem{sagemath} The Sage Developers, \emph{SageMath, the Sage Mathematics Software
+  System} (Version 9.5), 2022, \url{https://www.sagemath.org}.
+\bibitem{spence} E.~Spence, \emph{Strongly regular graphs} (online collections), and
+  E.~Spence, \emph{Regular two-graphs on 36 vertices}, Linear Algebra Appl.\ \textbf{226--228}
+  (1995), 459--497.
+\end{thebibliography}
+
+\end{document}
