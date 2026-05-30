@@ -614,9 +614,16 @@ de~Caen lifts.
 cascade to saturation and recording the full automorphism census; (ii) larger cells and
 multi-cell GM switching --- a size-$6$ probe already produced $33$ graphs lying outside the
 \emph{entire} size-$4$ cascade set of $174{,}209$, proving the reachable region is strictly
-larger than the size-$4$ cascade enumerates; and (iii) seeding new unclassified parameters
-(e.g.\ other $v<64$ ``$+$'' rows such as $\SRG{49,18,7,6}$ or $\SRG{57,24,11,9}$) from fresh
-low-symmetry constructions.
+larger than the size-$4$ cascade enumerates; and (iii) seeding further unclassified parameters
+from fresh low-symmetry constructions --- though this last is itself bounded by the lift wall.
+An orbit-matrix (de~Caen-style) attempt at $\SRG{49,18,7,6}$ is instructive: a prescribed
+order-$7$ automorphism gave four valid orbit matrices in seconds, yet \emph{none} of them lifted
+to a full graph within $1.6\times 10^{7}$ backtracking nodes, so the parameter stayed unopened.
+Where a sufficiently asymmetric seed cannot be cheaply obtained --- by a lucky library
+construction as for $\SRG{57,24,11,9}$, or a prior lift as for the first three parameters --- the
+construction stalls at exactly the wall that stops the open-existence searches
+(Section~\ref{sec:ironlaw}). The method therefore opens unclassified parameters readily, but only
+where one asymmetric graph is already within reach.
 
 \section{Conclusion}
 
