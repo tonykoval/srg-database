@@ -7,18 +7,21 @@ bundled in **`srg_constructed_catalogs.tar.gz`** (one graph per line, **graph6**
 tar xzf srg_constructed_catalogs.tar.gz
 ```
 
-| File (inside the archive) | Parameter | Graphs | Note |
+| File (inside the archive) | Parameter | Graphs in archive | Total constructed |
 |---|---|---|---|
-| `new_srg_50_21_8_9.g6` | SRG(50,21,8,9) | 16,939 | full catalog (cascade saturated) |
-| `new_srg_50_28_15_16.g6` | SRG(50,28,15,16) | 16,939 | full catalog (complements) |
-| `sample_srg_49_24_11_12.g6` | SRG(49,24,11,12) | 2,000 | sample — full catalog 379,000+ and still growing |
-| `sample_srg_57_24_11_9.g6` | SRG(57,24,11,9) | 2,000 | sample — full catalog 209,000+ and still growing |
+| `new_srg_50_21_8_9.g6` | SRG(50,21,8,9) | 16,939 (full) | 16,939 |
+| `new_srg_50_28_15_16.g6` | SRG(50,28,15,16) | 16,939 (full) | 16,939 |
+| `sample_srg_49_24_11_12.g6` | SRG(49,24,11,12) | 5,000 (sample) | **395,966** |
+| `sample_srg_57_24_11_9.g6` | SRG(57,24,11,9) | 5,000 (sample) | **1,122,556** |
+| `sample_srg_57_32_16_20.g6` | SRG(57,32,16,20) | 5,000 (sample) | **1,122,556** |
 
-Load with nauty (`labelg`, `dreadnaut`), SageMath (`Graph(line, format="graph6")`), networkx, etc.
+**Grand total constructed this work: 2,674,956 graphs** (all lower bounds — the cascades can be
+continued). Load with nauty (`labelg`, `dreadnaut`), SageMath (`Graph(line, format="graph6")`),
+networkx, etc.
 
 Every graph was verified valid (degree, λ, μ) and asymmetric (`|Aut|` = 1, except 48 of the
-SRG(50,21,8,9) graphs which have `|Aut|` = 2). The two large families (SRG(49,24,11,12) exceeds
-70 MB and is still growing) are shipped here only as samples; the full catalogs are regenerable
+SRG(50,21,8,9) graphs which have `|Aut|` = 2). The two SRG(57,·) families exceed 70 MB each
+(1.12M graphs) and are shipped here as 5,000-graph samples; the full catalogues are regenerable
 from the seeds and scripts in the [orbit-gen](https://github.com/tonykoval/orbit-gen) repository,
 or available on request.
 

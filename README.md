@@ -26,8 +26,10 @@ realised but whose graphs are *not classified* (Brouwer "+"):
 |---|---|---|
 | SRG(50,21,8,9) | 16,939 | valid; `\|Aut\|`∈{1,2}; **disjoint** from Spence's downloadable 18 |
 | SRG(50,28,15,16) | 16,939 | complements of the above |
-| SRG(49,24,11,12) | 379,000+ | valid; `\|Aut\|`=1; cascade still running |
-| SRG(57,24,11,9) | 209,000+ | valid; `\|Aut\|`=1; **opened from a single SageMath seed** |
+| SRG(49,24,11,12) | 395,966 | valid; `\|Aut\|`=1 |
+| SRG(57,24,11,9) | 1,122,556 | valid; `\|Aut\|`=1; **opened from a single SageMath seed** |
+| SRG(57,32,16,20) | 1,122,556 | complements of SRG(57,24,11,9) |
+| **Total** | **2,674,956** | all lower bounds (cascades can be continued) |
 
 Every graph is asymmetric (`|Aut|` not divisible by 6), hence provably outside every published
 prescribed-automorphism enumeration, and was independently re-verified by SageMath's

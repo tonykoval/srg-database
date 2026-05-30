@@ -28,7 +28,7 @@ Constructing New Strongly Regular Graphs at Unclassified Parameters}}
 \maketitle
 
 \begin{abstract}
-We report the construction of more than half a million previously unrecorded
+We report the construction of more than $2.6$ million previously unrecorded
 strongly regular graphs at five feasible parameter sets that are known to be
 realised but whose graphs are \emph{not classified}: $\SRG{50,21,8,9}$,
 its complement $\SRG{50,28,15,16}$, the self-complementary
@@ -97,12 +97,13 @@ Section~\ref{sec:novelty} --- by \emph{cascading} Godsil--McKay switching from
 \emph{low-symmetry} seeds. Concretely, starting from low-automorphism seed graphs and
 iterating, we obtained
 \[
-  16{,}939 \,+\, 16{,}939 \,+\, {>}379{,}000 \,+\, {>}209{,}000 \,+\, {>}209{,}000
+  16{,}939 \,+\, 16{,}939 \,+\, 395{,}966 \,+\, 1{,}122{,}556 \,+\, 1{,}122{,}556
+  \;=\; 2{,}674{,}956
 \]
 distinct, individually verified strongly regular graphs --- at $\SRG{50,21,8,9}$,
 $\SRG{50,28,15,16}$, $\SRG{49,24,11,12}$, $\SRG{57,24,11,9}$, and $\SRG{57,32,16,20}$
-respectively --- the counts for $\SRG{49,24,11,12}$ and the two $\SRG{57,\cdot}$ parameters
-still growing as the cascades run. The methodological heart of the
+respectively. These are \emph{lower bounds}: the cascades can be continued, so each count is
+a certified minimum number of graphs at that (unclassified) parameter. The methodological heart of the
 paper is the contrast, documented in Section~\ref{sec:cascade}, between low-symmetry
 seeds (which cascade) and high-symmetry geometric seeds (which saturate at a tiny closed
 class). The same contrast explains, dually, why the open-existence regime is so hard:
@@ -438,9 +439,9 @@ Parameter & New graphs & Automorphism census & Seed source \\
 \midrule
 $\SRG{50,21,8,9}$   & $16{,}939$ & $16{,}891$ with $|\Aut|=1$; $48$ with $|\Aut|=2$ & de~Caen lift \\
 $\SRG{50,28,15,16}$ & $16{,}939$ & identical (complements) & complementation \\
-$\SRG{49,24,11,12}$ & $>379{,}000$ & $|\Aut|=1$ on every sample drawn & de~Caen lift \\
-$\SRG{57,24,11,9}$  & $>209{,}000$ & $|\Aut|=1$ on every sample drawn & single Sage seed \\
-$\SRG{57,32,16,20}$ & $>209{,}000$ & identical (complements) & complementation \\
+$\SRG{49,24,11,12}$ & $395{,}966$ & $|\Aut|=1$ on every sample drawn & de~Caen lift \\
+$\SRG{57,24,11,9}$  & $1{,}122{,}556$ & $|\Aut|=1$ on every sample drawn & single Sage seed \\
+$\SRG{57,32,16,20}$ & $1{,}122{,}556$ & identical (complements) & complementation \\
 \bottomrule
 \end{tabular}
 \caption{Constructed graphs. For $\SRG{50,21,8,9}$ the automorphism census is complete:
@@ -495,12 +496,12 @@ parameter is far from exhausted.}
 
 \begin{table}[h]
 \centering
-\begin{tabular}{lrrrrrr}
+\begin{tabular}{lrrrrrrr}
 \toprule
-round & 1 & 2 & 3 & 4 & 5 & 6 \\
+round & 1 & 2 & 3 & 4 & 5 & 6 & 7 \\
 \midrule
-new this round & $9$ & $102$ & $829$ & $5{,}408$ & $31{,}409$ & $171{,}607$ \\
-cumulative & $9$ & $111$ & $940$ & $6{,}348$ & $37{,}757$ & $209{,}364$ \\
+new this round & $9$ & $102$ & $829$ & $5{,}408$ & $31{,}409$ & $171{,}607$ & $913{,}192$ \\
+cumulative & $9$ & $111$ & $940$ & $6{,}348$ & $37{,}757$ & $209{,}364$ & $1{,}122{,}556$ \\
 \bottomrule
 \end{tabular}
 \caption{$\SRG{57,24,11,9}$ cascade from a \emph{single} SageMath seed of order
@@ -637,7 +638,7 @@ where one asymmetric graph is already within reach.
 
 At realised-but-unclassified parameters, cascading single-cell Godsil--McKay switching
 from low-symmetry seeds is a cheap and reliable way to construct very large numbers of new
-strongly regular graphs. We produced more than $800{,}000$ verified graphs across five
+strongly regular graphs. We produced more than $2.6$ million verified graphs across five
 parameters --- $\SRG{50,21,8,9}$, its complement $\SRG{50,28,15,16}$,
 $\SRG{49,24,11,12}$, $\SRG{57,24,11,9}$, and its complement $\SRG{57,32,16,20}$ --- the
 overwhelming majority asymmetric and
@@ -658,6 +659,16 @@ back as seeds; and (4) verifying every graph for strong regularity and computing
 retaining those with $|\Aut|\nmid 6$ (and noting the $|\Aut|=1$ majority). The seed sets,
 the switching engine, the cascade driver, the verification scripts, and the cross-checked
 parameter database accompany this note in the \texttt{orbit-gen} repository.
+
+\section*{Data availability}
+The constructed graphs (in \texttt{graph6} format), the interactive cross-checked database,
+this paper, and the construction/verification code are openly available at
+\url{https://github.com/tonykoval/srg-database} (static database, draft, and catalogues) and
+\url{https://github.com/tonykoval/orbit-gen} (full pipeline). The complete catalogues for
+$\SRG{57,24,11,9}$ and its complement ($1{,}122{,}556$ graphs each, $>70$\,MB) are available
+on request or regenerable from the seeds and scripts; the full $\SRG{50,21,8,9}$/$\SRG{50,28,15,16}$
+catalogues and samples of the larger families are bundled directly. Every graph can be
+re-verified by SageMath's \texttt{is\_strongly\_regular()} or nauty.
 
 \begin{thebibliography}{9}
 \bibitem{brouwer-table} A.~E.~Brouwer, \emph{Parameters of strongly regular graphs},
