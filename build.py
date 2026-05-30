@@ -32,6 +32,8 @@ OURS = {
                           aut="|Aut|=1 (sampled)", file="out/new_srg_49_24_11_12_all.g6"),
     (57, 24, 11, 9):  dict(n=count_lines(os.path.join(WORK, "out/newparam_57_24_11_9/new_all.txt")),
                           aut="|Aut|=1 (sampled)", file="out/new_srg_57_24_11_9_all.g6"),
+    (57, 32, 16, 20): dict(n=count_lines(os.path.join(WORK, "out/new_srg_57_32_16_20_all.g6")),
+                          aut="|Aut|=1 (complements)", file="out/new_srg_57_32_16_20_all.g6"),
 }
 
 # ---- optional SageMath existence verdicts (data/sage_verdicts.json) ----------

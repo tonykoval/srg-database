@@ -29,10 +29,10 @@ Constructing New Strongly Regular Graphs at Unclassified Parameters}}
 
 \begin{abstract}
 We report the construction of more than half a million previously unrecorded
-strongly regular graphs at four feasible parameter sets that are known to be
+strongly regular graphs at five feasible parameter sets that are known to be
 realised but whose graphs are \emph{not classified}: $\SRG{50,21,8,9}$,
 its complement $\SRG{50,28,15,16}$, the self-complementary
-$\SRG{49,24,11,12}$, and $\SRG{57,24,11,9}$. The construction is an iterated, ``cascading''
+$\SRG{49,24,11,12}$, $\SRG{57,24,11,9}$, and its complement $\SRG{57,32,16,20}$. The construction is an iterated, ``cascading''
 application of single-cell Godsil--McKay switching seeded by low-automorphism graphs ---
 obtained from a $\mathbb{Z}_3$ lift of the de~Caen type for the first three, and from a
 \emph{single} SageMath-constructed representative for the fourth, demonstrating that the
@@ -97,13 +97,12 @@ Section~\ref{sec:novelty} --- by \emph{cascading} Godsil--McKay switching from
 \emph{low-symmetry} seeds. Concretely, starting from low-automorphism seed graphs and
 iterating, we obtained
 \[
-  \underbrace{16{,}939}_{\SRG{50,21,8,9}}\ +\
-  \underbrace{16{,}939}_{\SRG{50,28,15,16}}\ +\
-  \underbrace{{>}379{,}000}_{\SRG{49,24,11,12}}\ +\
-  \underbrace{{>}209{,}000}_{\SRG{57,24,11,9}}
+  16{,}939 \,+\, 16{,}939 \,+\, {>}379{,}000 \,+\, {>}209{,}000 \,+\, {>}209{,}000
 \]
-distinct, individually verified strongly regular graphs, the counts for
-$\SRG{49,24,11,12}$ and $\SRG{57,24,11,9}$ still growing as the cascades run. The methodological heart of the
+distinct, individually verified strongly regular graphs --- at $\SRG{50,21,8,9}$,
+$\SRG{50,28,15,16}$, $\SRG{49,24,11,12}$, $\SRG{57,24,11,9}$, and $\SRG{57,32,16,20}$
+respectively --- the counts for $\SRG{49,24,11,12}$ and the two $\SRG{57,\cdot}$ parameters
+still growing as the cascades run. The methodological heart of the
 paper is the contrast, documented in Section~\ref{sec:cascade}, between low-symmetry
 seeds (which cascade) and high-symmetry geometric seeds (which saturate at a tiny closed
 class). The same contrast explains, dually, why the open-existence regime is so hard:
@@ -441,6 +440,7 @@ $\SRG{50,21,8,9}$   & $16{,}939$ & $16{,}891$ with $|\Aut|=1$; $48$ with $|\Aut|
 $\SRG{50,28,15,16}$ & $16{,}939$ & identical (complements) & complementation \\
 $\SRG{49,24,11,12}$ & $>379{,}000$ & $|\Aut|=1$ on every sample drawn & de~Caen lift \\
 $\SRG{57,24,11,9}$  & $>209{,}000$ & $|\Aut|=1$ on every sample drawn & single Sage seed \\
+$\SRG{57,32,16,20}$ & $>209{,}000$ & identical (complements) & complementation \\
 \bottomrule
 \end{tabular}
 \caption{Constructed graphs. For $\SRG{50,21,8,9}$ the automorphism census is complete:
@@ -598,12 +598,20 @@ automorphism orders, from every identified published enumeration at their parame
 down by some unpublished switching experiment; at an unclassified parameter neither claim
 is available to anyone.
 
-\paragraph{Cell size.} We used $m=4$ throughout, natural because the smallest eigenvalue
-is $-4$ and size-$4$ cells are abundant. Larger even cells ($m=6,8$) are admissible and
-would reach further classes; on the highly symmetric $\SRG{37,18,8,9}$ catalogue, by
-contrast, size-$4$, $6$ and $8$ GM switching produced \emph{no} new graph, consistent with
-that catalogue being effectively switching-closed and with the saturation we observed for
-geometric seeds.
+\paragraph{Cell size, and a switching-closed contrast ($\SRG{37,18,8,9}$).} We used $m=4$
+throughout, natural because the smallest eigenvalue is $-4$; larger even cells reach further
+classes, and a size-$6$ probe already escaped the size-$4$ cascade (Section~\ref{sec:download}).
+A sharp contrast is the $\SRG{37,18,8,9}$ catalogue --- the parameter of the long-standing
+``$6803$rd graph'' question. Run over the \emph{full} $6802$-graph catalogue, size-$4$ and
+size-$8$ GM switching find \emph{no valid cells at all}, while size-$6$ produces $838$ distinct
+switches, \emph{every one of which already lies in the catalogue}. The catalogue is therefore
+switching-closed, so GM switching cannot exhibit a $6803$rd graph (such a graph, if it exists,
+would require the harder regular-two-graph route on $38$ vertices). Notably this closure is
+\emph{not} a symmetry effect: the $\SRG{37}$ catalogue is in fact $100\%$ asymmetric
+($|\Aut|=1$). The decisive difference from our five parameters is that there the \emph{seed}
+set --- a de~Caen lift, or a single SageMath graph --- was \emph{not} switching-closed, so
+switching cascaded outward into uncatalogued territory; the $\SRG{37}$ catalogue is already a
+complete switching class.
 
 \paragraph{Scope of $|\Aut|$.} The bitset engine is limited to $n<64$. The method extends
 verbatim to any unclassified parameter for which low-symmetry seeds are available; the
@@ -629,9 +637,10 @@ where one asymmetric graph is already within reach.
 
 At realised-but-unclassified parameters, cascading single-cell Godsil--McKay switching
 from low-symmetry seeds is a cheap and reliable way to construct very large numbers of new
-strongly regular graphs. We produced more than $600{,}000$ verified graphs across four
+strongly regular graphs. We produced more than $800{,}000$ verified graphs across five
 parameters --- $\SRG{50,21,8,9}$, its complement $\SRG{50,28,15,16}$,
-$\SRG{49,24,11,12}$, and $\SRG{57,24,11,9}$ --- the overwhelming majority asymmetric and
+$\SRG{49,24,11,12}$, $\SRG{57,24,11,9}$, and its complement $\SRG{57,32,16,20}$ --- the
+overwhelming majority asymmetric and
 therefore provably outside every symmetry-prescribed census. The governing phenomenon is the
 seed-symmetry dichotomy: low-symmetry seeds cascade into the asymmetric bulk, high-symmetry
 seeds saturate --- and a single seed of order $|\Aut|=3$ was enough to open the fourth
