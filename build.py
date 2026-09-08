@@ -318,7 +318,7 @@ function render(){
       '<td>'+knownCount(r)+'</td>'+
       '<td>'+oursCell+'</td>'+
       '<td>'+sageCell(r)+'</td>'+
-      '<td class="cmt">'+cmt+' <a class="src" href="data/'+r.page.replace('.html','')+'.html" title="Brouwer source">src</a></td>'+
+      '<td class="cmt">'+cmt+' <a class="src" href="data/'+r.page.replace('srgtab','brouwer_')+'" title="Brouwer source (local mirror, retrieved 2026-05-30)">src</a></td>'+
       '</tr>';
   }).join('');
   document.getElementById('shown').textContent=rows.length+' / '+DATA.length+' shown';
