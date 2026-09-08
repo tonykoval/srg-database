@@ -6,6 +6,8 @@ paper describing the construction and the graphs themselves.
 
 ## View the database
 
+Companion page **[`z3.html`](z3.html)** (2026-09-08): automorphisms of order 3 — every known SRG with an explicit order-3 action run through the orbit-matrix pipeline (filter, frame existence, generator, lift), and the fixed-point map of the open parameter sets (which f are impossible, closed, or open). Regenerate with `python3 build_z3.py`.
+
 Open **[`index.html`](index.html)** directly in a browser (it is fully self-contained — data
 embedded, no server needed), or enable **GitHub Pages** (Settings → Pages → branch `main`) to
 browse it at `https://tonykoval.github.io/srg-database/`.
