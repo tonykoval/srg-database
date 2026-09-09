@@ -9,15 +9,15 @@
   ],
   "f": 3,
   "o": 4,
-  "r": 2,
-  "s": -2,
   "n2": 4,
   "m": 1,
   "a": 1,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=5, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "COMPLETE 1 matrices",
+  "generator_has_truth": true,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "T(6) 2 three-cycles",
@@ -29,15 +29,15 @@
   ],
   "f": 0,
   "o": 5,
-  "r": 2,
-  "s": -2,
   "n2": 2,
   "m": 2,
   "a": 2,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=6, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "COMPLETE 1 matrices",
+  "generator_has_truth": true,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "T(7) 1 three-cycle",
@@ -49,15 +49,15 @@
   ],
   "f": 6,
   "o": 5,
-  "r": 3,
-  "s": -2,
   "n2": 5,
   "m": 1,
   "a": 1,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=6, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "COMPLETE 1 matrices",
+  "generator_has_truth": true,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "T(7) 2 three-cycles",
@@ -69,15 +69,15 @@
   ],
   "f": 0,
   "o": 7,
-  "r": 3,
-  "s": -2,
   "n2": 4,
   "m": 2,
   "a": 2,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=8, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "COMPLETE 1 matrices",
+  "generator_has_truth": true,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "T(8) 1 three-cycle",
@@ -89,15 +89,15 @@
   ],
   "f": 10,
   "o": 6,
-  "r": 4,
-  "s": -2,
   "n2": 6,
   "m": 1,
   "a": 1,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=7, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "COMPLETE 2 matrices",
+  "generator_has_truth": true,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "T(8) 2 three-cycles",
@@ -109,15 +109,15 @@
   ],
   "f": 1,
   "o": 9,
-  "r": 4,
-  "s": -2,
   "n2": 6,
   "m": 2,
   "a": 2,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=10, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "COMPLETE 4 matrices",
+  "generator_has_truth": true,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "T(9) 1 three-cycle",
@@ -129,15 +129,15 @@
   ],
   "f": 15,
   "o": 7,
-  "r": 5,
-  "s": -2,
   "n2": 7,
   "m": 1,
   "a": 1,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=8, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "COMPLETE 1 matrices",
+  "generator_has_truth": true,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "T(9) 2 three-cycles",
@@ -149,15 +149,15 @@
   ],
   "f": 3,
   "o": 11,
-  "r": 5,
-  "s": -2,
   "n2": 8,
   "m": 2,
   "a": 2,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=12, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.1
+  "generator": "COMPLETE 1 matrices",
+  "generator_has_truth": true,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "T(9) 3 three-cycles",
@@ -169,15 +169,15 @@
   ],
   "f": 0,
   "o": 12,
-  "r": 5,
-  "s": -2,
   "n2": 3,
   "m": 3,
   "a": 3,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=13, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "COMPLETE 1 matrices",
+  "generator_has_truth": true,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "T(10) 1 three-cycle",
@@ -189,15 +189,15 @@
   ],
   "f": 21,
   "o": 8,
-  "r": 6,
-  "s": -2,
   "n2": 8,
   "m": 1,
   "a": 1,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=9, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "COMPLETE 0 matrices",
+  "generator_has_truth": null,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "T(10) 2 three-cycles",
@@ -209,15 +209,15 @@
   ],
   "f": 6,
   "o": 13,
-  "r": 6,
-  "s": -2,
   "n2": 10,
   "m": 2,
   "a": 2,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=14, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "COMPLETE 1 matrices",
+  "generator_has_truth": true,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "T(10) 3 three-cycles",
@@ -229,15 +229,15 @@
   ],
   "f": 0,
   "o": 15,
-  "r": 6,
-  "s": -2,
   "n2": 6,
   "m": 3,
   "a": 3,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=16, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "TIMEOUT 300s",
+  "generator_has_truth": null,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "T(11) 1 three-cycle",
@@ -249,15 +249,15 @@
   ],
   "f": 28,
   "o": 9,
-  "r": 7,
-  "s": -2,
   "n2": 9,
   "m": 1,
   "a": 1,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=10, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "TIMEOUT 300s",
+  "generator_has_truth": null,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "T(11) 2 three-cycles",
@@ -269,15 +269,15 @@
   ],
   "f": 10,
   "o": 15,
-  "r": 7,
-  "s": -2,
   "n2": 12,
   "m": 2,
   "a": 2,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=16, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.1
+  "generator": "COMPLETE 1 matrices",
+  "generator_has_truth": true,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "T(11) 3 three-cycles",
@@ -289,15 +289,15 @@
   ],
   "f": 1,
   "o": 18,
-  "r": 7,
-  "s": -2,
   "n2": 9,
   "m": 3,
   "a": 3,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=19, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.1
+  "generator": "TIMEOUT 300s",
+  "generator_has_truth": null,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "T(12) 1 three-cycle",
@@ -309,15 +309,15 @@
   ],
   "f": 36,
   "o": 10,
-  "r": 8,
-  "s": -2,
   "n2": 10,
   "m": 1,
   "a": 1,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=11, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.1
+  "generator": "TIMEOUT 300s",
+  "generator_has_truth": null,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "T(12) 2 three-cycles",
@@ -329,15 +329,15 @@
   ],
   "f": 15,
   "o": 17,
-  "r": 8,
-  "s": -2,
   "n2": 14,
   "m": 2,
   "a": 2,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=18, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.1
+  "generator": "TIMEOUT 300s",
+  "generator_has_truth": null,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "T(12) 3 three-cycles",
@@ -349,15 +349,15 @@
   ],
   "f": 3,
   "o": 21,
-  "r": 8,
-  "s": -2,
   "n2": 12,
   "m": 3,
   "a": 3,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=22, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.1
+  "generator": "TIMEOUT 300s",
+  "generator_has_truth": null,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "T(12) 4 three-cycles",
@@ -369,15 +369,15 @@
   ],
   "f": 0,
   "o": 22,
-  "r": 8,
-  "s": -2,
   "n2": 4,
   "m": 4,
   "a": 4,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=23, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.1
+  "generator": "TIMEOUT 300s",
+  "generator_has_truth": null,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "T(13) 1 three-cycle",
@@ -389,15 +389,15 @@
   ],
   "f": 45,
   "o": 11,
-  "r": 9,
-  "s": -2,
   "n2": 11,
   "m": 1,
   "a": 1,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=12, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.1
+  "generator": "TIMEOUT 300s",
+  "generator_has_truth": null,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "T(13) 2 three-cycles",
@@ -409,15 +409,15 @@
   ],
   "f": 21,
   "o": 19,
-  "r": 9,
-  "s": -2,
   "n2": 16,
   "m": 2,
   "a": 2,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=20, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.1
+  "generator": "TIMEOUT 300s",
+  "generator_has_truth": null,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "T(13) 3 three-cycles",
@@ -429,15 +429,15 @@
   ],
   "f": 6,
   "o": 24,
-  "r": 9,
-  "s": -2,
   "n2": 15,
   "m": 3,
   "a": 3,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=25, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "TIMEOUT 300s",
+  "generator_has_truth": null,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "T(13) 4 three-cycles",
@@ -449,15 +449,15 @@
   ],
   "f": 0,
   "o": 26,
-  "r": 9,
-  "s": -2,
   "n2": 8,
   "m": 4,
   "a": 4,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=27, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "TIMEOUT 300s",
+  "generator_has_truth": null,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "T(14) 1 three-cycle",
@@ -469,15 +469,15 @@
   ],
   "f": 55,
   "o": 12,
-  "r": 10,
-  "s": -2,
   "n2": 12,
   "m": 1,
   "a": 1,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=13, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.1
+  "generator": "TIMEOUT 300s",
+  "generator_has_truth": null,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "T(14) 2 three-cycles",
@@ -489,15 +489,15 @@
   ],
   "f": 28,
   "o": 21,
-  "r": 10,
-  "s": -2,
   "n2": 18,
   "m": 2,
   "a": 2,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=22, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.1
+  "generator": "TIMEOUT 300s",
+  "generator_has_truth": null,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "T(14) 3 three-cycles",
@@ -509,15 +509,15 @@
   ],
   "f": 10,
   "o": 27,
-  "r": 10,
-  "s": -2,
   "n2": 18,
   "m": 3,
   "a": 3,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=28, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.1
+  "generator": "TIMEOUT 300s",
+  "generator_has_truth": null,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "T(14) 4 three-cycles",
@@ -529,15 +529,15 @@
   ],
   "f": 1,
   "o": 30,
-  "r": 10,
-  "s": -2,
   "n2": 12,
   "m": 4,
   "a": 4,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=31, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.1
+  "generator": "TIMEOUT 300s",
+  "generator_has_truth": null,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "L2(3) rows 0x3-cycle cols 1x3-cycle",
@@ -549,15 +549,15 @@
   ],
   "f": 0,
   "o": 3,
-  "r": 1,
-  "s": -2,
   "n2": 3,
   "m": 1,
   "a": 1,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=4, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "COMPLETE 2 matrices",
+  "generator_has_truth": true,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "L2(3) rows 1x3-cycle cols 1x3-cycle",
@@ -569,15 +569,15 @@
   ],
   "f": 0,
   "o": 3,
-  "r": 1,
-  "s": -2,
   "n2": 0,
   "m": 2,
   "a": 1,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=4, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "COMPLETE 2 matrices",
+  "generator_has_truth": true,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "L2(4) rows 0x3-cycle cols 1x3-cycle",
@@ -589,15 +589,15 @@
   ],
   "f": 4,
   "o": 4,
-  "r": 2,
-  "s": -2,
   "n2": 4,
   "m": 1,
   "a": 1,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=5, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.1
+  "generator": "COMPLETE 1 matrices",
+  "generator_has_truth": true,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "L2(4) rows 1x3-cycle cols 1x3-cycle",
@@ -609,15 +609,15 @@
   ],
   "f": 1,
   "o": 5,
-  "r": 2,
-  "s": -2,
   "n2": 2,
   "m": 2,
   "a": 2,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=6, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "COMPLETE 2 matrices",
+  "generator_has_truth": true,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "L2(5) rows 0x3-cycle cols 1x3-cycle",
@@ -629,15 +629,15 @@
   ],
   "f": 10,
   "o": 5,
-  "r": 3,
-  "s": -2,
   "n2": 5,
   "m": 1,
   "a": 1,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=6, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "COMPLETE 0 matrices",
+  "generator_has_truth": null,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "L2(5) rows 1x3-cycle cols 1x3-cycle",
@@ -649,15 +649,15 @@
   ],
   "f": 4,
   "o": 7,
-  "r": 3,
-  "s": -2,
   "n2": 4,
   "m": 2,
   "a": 2,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=8, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "COMPLETE 1 matrices",
+  "generator_has_truth": true,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "L2(6) rows 0x3-cycle cols 1x3-cycle",
@@ -669,15 +669,15 @@
   ],
   "f": 18,
   "o": 6,
-  "r": 4,
-  "s": -2,
   "n2": 6,
   "m": 1,
   "a": 1,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=7, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "COMPLETE 0 matrices",
+  "generator_has_truth": null,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "L2(6) rows 0x3-cycle cols 2x3-cycle",
@@ -689,15 +689,15 @@
   ],
   "f": 0,
   "o": 12,
-  "r": 4,
-  "s": -2,
   "n2": 12,
   "m": 2,
   "a": 2,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=13, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "COMPLETE 3 matrices",
+  "generator_has_truth": true,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "L2(6) rows 1x3-cycle cols 1x3-cycle",
@@ -709,15 +709,15 @@
   ],
   "f": 9,
   "o": 9,
-  "r": 4,
-  "s": -2,
   "n2": 6,
   "m": 2,
   "a": 2,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=10, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "COMPLETE 1 matrices",
+  "generator_has_truth": true,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "L2(6) rows 1x3-cycle cols 2x3-cycle",
@@ -729,15 +729,15 @@
   ],
   "f": 0,
   "o": 12,
-  "r": 4,
-  "s": -2,
   "n2": 6,
   "m": 3,
   "a": 3,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=13, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "COMPLETE 3 matrices",
+  "generator_has_truth": true,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "L2(6) rows 2x3-cycle cols 2x3-cycle",
@@ -749,15 +749,15 @@
   ],
   "f": 0,
   "o": 12,
-  "r": 4,
-  "s": -2,
   "n2": 0,
   "m": 4,
   "a": 4,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=13, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "COMPLETE 3 matrices",
+  "generator_has_truth": true,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "L2(7) rows 0x3-cycle cols 1x3-cycle",
@@ -769,15 +769,15 @@
   ],
   "f": 28,
   "o": 7,
-  "r": 5,
-  "s": -2,
   "n2": 7,
   "m": 1,
   "a": 1,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=8, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "TIMEOUT 300s",
+  "generator_has_truth": null,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "L2(7) rows 0x3-cycle cols 2x3-cycle",
@@ -789,15 +789,15 @@
   ],
   "f": 7,
   "o": 14,
-  "r": 5,
-  "s": -2,
   "n2": 14,
   "m": 2,
   "a": 2,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=15, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "COMPLETE 1 matrices",
+  "generator_has_truth": true,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "L2(7) rows 1x3-cycle cols 1x3-cycle",
@@ -809,15 +809,15 @@
   ],
   "f": 16,
   "o": 11,
-  "r": 5,
-  "s": -2,
   "n2": 8,
   "m": 2,
   "a": 2,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=12, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "COMPLETE 1 matrices",
+  "generator_has_truth": true,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "L2(7) rows 1x3-cycle cols 2x3-cycle",
@@ -829,15 +829,15 @@
   ],
   "f": 4,
   "o": 15,
-  "r": 5,
-  "s": -2,
   "n2": 9,
   "m": 3,
   "a": 3,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=16, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "COMPLETE 1 matrices",
+  "generator_has_truth": true,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "L2(7) rows 2x3-cycle cols 2x3-cycle",
@@ -849,15 +849,15 @@
   ],
   "f": 1,
   "o": 16,
-  "r": 5,
-  "s": -2,
   "n2": 4,
   "m": 4,
   "a": 4,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=17, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "COMPLETE 1 matrices",
+  "generator_has_truth": true,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "L2(8) rows 0x3-cycle cols 1x3-cycle",
@@ -869,15 +869,15 @@
   ],
   "f": 40,
   "o": 8,
-  "r": 6,
-  "s": -2,
   "n2": 8,
   "m": 1,
   "a": 1,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=9, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "TIMEOUT 300s",
+  "generator_has_truth": null,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "L2(8) rows 0x3-cycle cols 2x3-cycle",
@@ -889,15 +889,15 @@
   ],
   "f": 16,
   "o": 16,
-  "r": 6,
-  "s": -2,
   "n2": 16,
   "m": 2,
   "a": 2,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=17, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "COMPLETE 0 matrices",
+  "generator_has_truth": null,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "L2(8) rows 1x3-cycle cols 1x3-cycle",
@@ -909,15 +909,15 @@
   ],
   "f": 25,
   "o": 13,
-  "r": 6,
-  "s": -2,
   "n2": 10,
   "m": 2,
   "a": 2,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=14, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "TIMEOUT 300s",
+  "generator_has_truth": null,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "L2(8) rows 1x3-cycle cols 2x3-cycle",
@@ -929,15 +929,15 @@
   ],
   "f": 10,
   "o": 18,
-  "r": 6,
-  "s": -2,
   "n2": 12,
   "m": 3,
   "a": 3,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=19, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "COMPLETE 1 matrices",
+  "generator_has_truth": true,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "L2(8) rows 2x3-cycle cols 2x3-cycle",
@@ -949,15 +949,15 @@
   ],
   "f": 4,
   "o": 20,
-  "r": 6,
-  "s": -2,
   "n2": 8,
   "m": 4,
   "a": 4,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=21, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "TIMEOUT 300s",
+  "generator_has_truth": null,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "L2(9) rows 0x3-cycle cols 1x3-cycle",
@@ -969,15 +969,15 @@
   ],
   "f": 54,
   "o": 9,
-  "r": 7,
-  "s": -2,
   "n2": 9,
   "m": 1,
   "a": 1,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=10, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "TIMEOUT 300s",
+  "generator_has_truth": null,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "L2(9) rows 0x3-cycle cols 2x3-cycle",
@@ -989,15 +989,15 @@
   ],
   "f": 27,
   "o": 18,
-  "r": 7,
-  "s": -2,
   "n2": 18,
   "m": 2,
   "a": 2,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=19, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "TIMEOUT 300s",
+  "generator_has_truth": null,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "L2(9) rows 0x3-cycle cols 3x3-cycle",
@@ -1009,15 +1009,15 @@
   ],
   "f": 0,
   "o": 27,
-  "r": 7,
-  "s": -2,
   "n2": 27,
   "m": 3,
   "a": 3,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=28, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "TIMEOUT 300s",
+  "generator_has_truth": null,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "L2(9) rows 1x3-cycle cols 1x3-cycle",
@@ -1029,15 +1029,15 @@
   ],
   "f": 36,
   "o": 15,
-  "r": 7,
-  "s": -2,
   "n2": 12,
   "m": 2,
   "a": 2,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=16, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "TIMEOUT 300s",
+  "generator_has_truth": null,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "L2(9) rows 1x3-cycle cols 2x3-cycle",
@@ -1049,15 +1049,15 @@
   ],
   "f": 18,
   "o": 21,
-  "r": 7,
-  "s": -2,
   "n2": 15,
   "m": 3,
   "a": 3,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=22, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "COMPLETE 1 matrices",
+  "generator_has_truth": true,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "L2(9) rows 1x3-cycle cols 3x3-cycle",
@@ -1069,15 +1069,15 @@
   ],
   "f": 0,
   "o": 27,
-  "r": 7,
-  "s": -2,
   "n2": 18,
   "m": 4,
   "a": 4,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=28, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "TIMEOUT 300s",
+  "generator_has_truth": null,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "L2(9) rows 2x3-cycle cols 2x3-cycle",
@@ -1089,15 +1089,15 @@
   ],
   "f": 9,
   "o": 24,
-  "r": 7,
-  "s": -2,
   "n2": 12,
   "m": 4,
   "a": 4,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=25, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "TIMEOUT 300s",
+  "generator_has_truth": null,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "L2(9) rows 2x3-cycle cols 3x3-cycle",
@@ -1109,15 +1109,15 @@
   ],
   "f": 0,
   "o": 27,
-  "r": 7,
-  "s": -2,
   "n2": 9,
   "m": 5,
   "a": 5,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=28, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "TIMEOUT 300s",
+  "generator_has_truth": null,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "L2(9) rows 3x3-cycle cols 3x3-cycle",
@@ -1129,15 +1129,15 @@
   ],
   "f": 0,
   "o": 27,
-  "r": 7,
-  "s": -2,
   "n2": 0,
   "m": 6,
   "a": 6,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=28, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "TIMEOUT 300s",
+  "generator_has_truth": null,
+  "frame": null,
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "L2(10) rows 0x3-cycle cols 1x3-cycle",
@@ -1149,15 +1149,15 @@
   ],
   "f": 70,
   "o": 10,
-  "r": 8,
-  "s": -2,
   "n2": 10,
   "m": 1,
   "a": 1,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=11, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.1
+  "generator": "TIMEOUT 300s",
+  "generator_has_truth": null,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "L2(10) rows 0x3-cycle cols 2x3-cycle",
@@ -1169,15 +1169,15 @@
   ],
   "f": 40,
   "o": 20,
-  "r": 8,
-  "s": -2,
   "n2": 20,
   "m": 2,
   "a": 2,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=21, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "TIMEOUT 300s",
+  "generator_has_truth": null,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "L2(10) rows 0x3-cycle cols 3x3-cycle",
@@ -1189,15 +1189,15 @@
   ],
   "f": 10,
   "o": 30,
-  "r": 8,
-  "s": -2,
   "n2": 30,
   "m": 3,
   "a": 3,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=31, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "TIMEOUT 300s",
+  "generator_has_truth": null,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "L2(10) rows 1x3-cycle cols 1x3-cycle",
@@ -1209,15 +1209,15 @@
   ],
   "f": 49,
   "o": 17,
-  "r": 8,
-  "s": -2,
   "n2": 14,
   "m": 2,
   "a": 2,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=18, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "TIMEOUT 300s",
+  "generator_has_truth": null,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "L2(10) rows 1x3-cycle cols 2x3-cycle",
@@ -1229,15 +1229,15 @@
   ],
   "f": 28,
   "o": 24,
-  "r": 8,
-  "s": -2,
   "n2": 18,
   "m": 3,
   "a": 3,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=25, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "TIMEOUT 300s",
+  "generator_has_truth": null,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "L2(10) rows 1x3-cycle cols 3x3-cycle",
@@ -1249,15 +1249,15 @@
   ],
   "f": 7,
   "o": 31,
-  "r": 8,
-  "s": -2,
   "n2": 22,
   "m": 4,
   "a": 4,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=32, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "TIMEOUT 300s",
+  "generator_has_truth": null,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "L2(10) rows 2x3-cycle cols 2x3-cycle",
@@ -1269,15 +1269,15 @@
   ],
   "f": 16,
   "o": 28,
-  "r": 8,
-  "s": -2,
   "n2": 16,
   "m": 4,
   "a": 4,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=29, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "TIMEOUT 300s",
+  "generator_has_truth": null,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "L2(10) rows 2x3-cycle cols 3x3-cycle",
@@ -1289,15 +1289,15 @@
   ],
   "f": 4,
   "o": 32,
-  "r": 8,
-  "s": -2,
   "n2": 14,
   "m": 5,
   "a": 5,
   "filter": "OK",
   "lift": "VERIFIED",
-  "lift_line": "RESULT: 1 solutions (cap 1), nodes=33, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "TIMEOUT 300s",
+  "generator_has_truth": null,
+  "frame": "FEASIBLE",
+  "source": "run_full.log 2026-09-08"
  },
  {
   "graph": "L2(10) rows 3x3-cycle cols 3x3-cycle",
@@ -1317,7 +1317,8 @@
   "filter": "OK",
   "lift": "VERIFIED",
   "lift_line": "RESULT: 1 solutions (cap 1), nodes=34, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "TIMEOUT 300s",
+  "secs": 300.1
  },
  {
   "graph": "Paley(13) x->3x",
@@ -1397,7 +1398,11 @@
   "filter": "OK",
   "lift": "VERIFIED",
   "lift_line": "RESULT: 1 solutions (cap 1), nodes=4, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.1
+  "generator": "COMPLETE 1 matrices",
+  "generator_has_truth": true,
+  "frame": "FEASIBLE",
+  "frame_line": "RESULT case n2=0 m=2: {'INFEASIBLE': 0, 'FEASIBLE': 1, 'UNKNOWN': 0} in 0s",
+  "secs": 2.4
  },
  {
   "graph": "Clebsch coordinates (123)",
@@ -1417,7 +1422,11 @@
   "filter": "OK",
   "lift": "VERIFIED",
   "lift_line": "RESULT: 1 solutions (cap 1), nodes=5, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.1
+  "generator": "COMPLETE 1 matrices",
+  "generator_has_truth": true,
+  "frame": "FEASIBLE",
+  "frame_line": "RESULT case n2=0 m=3: {'INFEASIBLE': 0, 'FEASIBLE': 1, 'UNKNOWN': 0} in 0s",
+  "secs": 2.4
  },
  {
   "graph": "Shrikhande (x,y)->(-y,x-y)",
@@ -1437,7 +1446,11 @@
   "filter": "OK",
   "lift": "VERIFIED",
   "lift_line": "RESULT: 1 solutions (cap 1), nodes=6, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "COMPLETE 2 matrices",
+  "generator_has_truth": true,
+  "frame": "FEASIBLE",
+  "frame_line": "RESULT case n2=2 m=2: {'INFEASIBLE': 2, 'FEASIBLE': 5, 'UNKNOWN': 0} in 0s",
+  "secs": 2.5
  },
  {
   "graph": "LS3(Z6) translation by n/3",
@@ -1457,7 +1470,10 @@
   "filter": "OK",
   "lift": "VERIFIED",
   "lift_line": "RESULT: 1 solutions (cap 1), nodes=15, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.0
+  "generator": "TIMEOUT 300s",
+  "frame": "FEASIBLE",
+  "frame_line": "RESULT case n2=12 m=4: {'INFEASIBLE': 40, 'FEASIBLE': 60, 'UNKNOWN': 0} in 14s",
+  "secs": 314.1
  },
  {
   "graph": "LS3(Z9) translation by n/3",
@@ -1477,7 +1493,8 @@
   "filter": "OK",
   "lift": "VERIFIED",
   "lift_line": "RESULT: 1 solutions (cap 1), nodes=28, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.1
+  "generator": "TIMEOUT 300s",
+  "secs": 300.2
  },
  {
   "graph": "W(3)=srg(40,12,2,4) transvection",
@@ -1497,7 +1514,11 @@
   "filter": "OK",
   "lift": "VERIFIED",
   "lift_line": "RESULT: 1 solutions (cap 1), nodes=10, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.1
+  "generator": "COMPLETE 1 matrices",
+  "generator_has_truth": true,
+  "frame": "FEASIBLE",
+  "frame_line": "RESULT case n2=0 m=6: {'INFEASIBLE': 7, 'FEASIBLE': 6, 'UNKNOWN': 0} in 0s",
+  "secs": 4.5
  },
  {
   "graph": "W(3)=srg(40,12,2,4) block unipotent",
@@ -1517,7 +1538,11 @@
   "filter": "OK",
   "lift": "VERIFIED",
   "lift_line": "RESULT: 1 solutions (cap 1), nodes=16, 0s, CAP REACHED (INCOMPLETE)",
-  "secs": 0.1
+  "generator": "COMPLETE 5 matrices",
+  "generator_has_truth": true,
+  "frame": "FEASIBLE",
+  "frame_line": "RESULT case n2=0 m=8: {'INFEASIBLE': 40, 'FEASIBLE': 60, 'UNKNOWN': 0} in 13s",
+  "secs": 15.9
  },
  {
   "graph": "W(4)=srg(85,20,3,5) block diag(A,A)",
@@ -1535,8 +1560,114 @@
   "m": 15,
   "a": 10,
   "filter": "OK",
-  "lift": "TIMEOUT(cap)",
-  "lift_line": "RESULT: 0 solutions (cap 1), nodes=262144, 669s, TIMEOUT (INCOMPLETE)",
-  "secs": 669.0
+  "lift": "VERIFIED",
+  "lift_line": "RESULT: 1 solutions (cap 1), nodes=410544, 499s, CAP REACHED (INCOMPLETE)",
+  "generator": "TIMEOUT 300s",
+  "secs": 798.7
+ },
+ {
+  "graph": "L3(GF(8))=srg(64,21,8,6) Frobenius x->x^2",
+  "params": [
+   64,
+   21,
+   8,
+   6
+  ],
+  "f": 4,
+  "o": 20,
+  "r": 5,
+  "s": -3,
+  "n2": 12,
+  "m": 6,
+  "a": 6,
+  "filter": "OK",
+  "lift": "VERIFIED",
+  "lift_line": "RESULT: 1 solutions (cap 1), nodes=68, 0s, CAP REACHED (INCOMPLETE)",
+  "generator": "TIMEOUT 300s",
+  "secs": 300.1
+ },
+ {
+  "graph": "L3(Z6)=srg(36,15,6,6) translation by 2",
+  "params": [
+   36,
+   15,
+   6,
+   6
+  ],
+  "f": 0,
+  "o": 12,
+  "r": 3,
+  "s": -3,
+  "n2": 0,
+  "m": 6,
+  "a": 6,
+  "filter": "OK",
+  "lift": "VERIFIED",
+  "lift_line": "RESULT: 1 solutions (cap 1), nodes=73, 0s, CAP REACHED (INCOMPLETE)",
+  "generator": "TIMEOUT 300s",
+  "secs": 300.4
+ },
+ {
+  "graph": "L3(Z7)=srg(49,18,7,6) x->2x",
+  "params": [
+   49,
+   18,
+   7,
+   6
+  ],
+  "f": 1,
+  "o": 16,
+  "r": 4,
+  "s": -3,
+  "n2": 6,
+  "m": 6,
+  "a": 6,
+  "filter": "OK",
+  "lift": "VERIFIED",
+  "lift_line": "RESULT: 1 solutions (cap 1), nodes=399, 0s, CAP REACHED (INCOMPLETE)",
+  "generator": "TIMEOUT 300s",
+  "secs": 300.2
+ },
+ {
+  "graph": "L3(Z3^2)=srg(81,24,9,6) translation (1,0)",
+  "params": [
+   81,
+   24,
+   9,
+   6
+  ],
+  "f": 0,
+  "o": 27,
+  "r": 6,
+  "s": -3,
+  "n2": 0,
+  "m": 9,
+  "a": 9,
+  "filter": "OK",
+  "lift": "VERIFIED",
+  "lift_line": "RESULT: 1 solutions (cap 1), nodes=28, 0s, CAP REACHED (INCOMPLETE)",
+  "generator": "TIMEOUT 300s",
+  "secs": 301.3
+ },
+ {
+  "graph": "L3(Z3^2)=srg(81,24,9,6) unipotent (a,b)->(a+b,b)",
+  "params": [
+   81,
+   24,
+   9,
+   6
+  ],
+  "f": 9,
+  "o": 24,
+  "r": 6,
+  "s": -3,
+  "n2": 18,
+  "m": 6,
+  "a": 6,
+  "filter": "OK",
+  "lift": "VERIFIED",
+  "lift_line": "RESULT: 1 solutions (cap 1), nodes=25, 0s, CAP REACHED (INCOMPLETE)",
+  "generator": "TIMEOUT 300s",
+  "secs": 300.2
  }
 ]
