@@ -1,8 +1,9 @@
 # SRG Database
 
 A cross-checked database of **strongly regular graph** parameters (v ≤ 100), annotated with
-**newly constructed graphs** at four Brouwer-unclassified parameters — together with the draft
-paper describing the construction and the graphs themselves.
+**graphs constructed by Godsil–McKay switching** at four Brouwer-unclassified parameters — together with the draft
+paper describing the construction and the graphs themselves. **Correction of 7 Nov 2026 below: the SRG(57,·) graphs
+are not new.** The new **[SRG Library](library.html)** covers every parameter set up to v = 1300.
 
 ## View the database
 
@@ -20,18 +21,22 @@ filters, and click-to-sort. The four parameters extended by this work are highli
 
 ## Results
 
-Cascading single-cell **Godsil–McKay switching** from low-automorphism seeds constructs large
-families of new, **asymmetric** strongly regular graphs at parameters that are known to be
+Cascading single-cell **Godsil–McKay switching** from low-automorphism seeds constructs large families of **asymmetric** strongly regular graphs at parameters that are known to be
 realised but whose graphs are *not classified* (Brouwer "+"):
 
-| Parameter | New graphs | Verification |
+| Parameter | Graphs constructed | Verification and status |
 |---|---|---|
 | SRG(50,21,8,9) | 16,939 | valid; `\|Aut\|`∈{1,2}; **disjoint** from Spence's downloadable 18 |
 | SRG(50,28,15,16) | 16,939 | complements of the above |
-| SRG(49,24,11,12) | 395,966 | valid; `\|Aut\|`=1 |
-| SRG(57,24,11,9) | 1,122,556 | valid; `\|Aut\|`=1; **opened from a single SageMath seed** |
-| SRG(57,32,16,20) | 1,122,556 | complements of SRG(57,24,11,9) |
-| **Total** | **2,674,956** | all lower bounds (cascades can be continued) |
+| SRG(49,24,11,12) | 535,728 (corrected count; pairwise non-isomorphic by nauty) | valid; `\|Aut\|`=1; overlap with the 2015 Mačaj–Kovaľ corpus not yet checked |
+| SRG(57,24,11,9) | 1,122,556 | valid; `\|Aut\|`=1; **not new**: every one is the block graph of a Steiner triple system S(2,3,19) (19 Delsarte 9-cliques, each vertex in 3 of them), and all 11,084,874,829 STS(19) were classified by Kaski–Östergård (Math. Comp. 73 (2004), doi:10.1090/S0025-5718-04-01626-6); Ihringer lists 31,490,375 graphs on this row |
+| SRG(57,32,16,20) | 1,122,556 | complements of SRG(57,24,11,9) — not new for the same reason |
+| **Total** | **2,814,718** | of which 2,245,112 (the SRG(57,·) graphs) are known; the rest are lower bounds |
+
+**Correction (7 Nov 2026).** Being asymmetric does not make a graph new: the SRG(57,·) graphs are Steiner-triple-system
+block graphs and therefore among the 11,084,874,829 STS(19) classified by Kaski and Östergård (2004); the paper's novelty
+argument does not cover that classification and is withdrawn for these two rows. The SRG(49,24,11,12) count is corrected to
+535,728; its novelty is being re-checked against the 2015 corpus. The text below is the original May 2026 wording.
 
 Every graph is asymmetric (`|Aut|` not divisible by 6), hence provably outside every published
 prescribed-automorphism enumeration, and was independently re-verified by SageMath's
