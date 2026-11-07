@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SRG References</title>
+<meta name="description" content="Complete bibliography of the SRG Library: Brouwer's references, the sources of counts and constructions, the literature and the published deposits, each with a DOI, arXiv or stable URL.">
+<link rel="stylesheet" href="assets/library.css">
+<script src="assets/library.js"></script>
+</head>
+<body data-page="references">
+<header class="top"></header>
+<main class="wrap">
+  <h1>References</h1>
+  <p class="lede">Every work cited anywhere in the Library. Each entry carries at least one resolvable link: a DOI, an arXiv identifier, a stable URL, or — for the entries of Brouwer’s list — the entry in Brouwer’s own reference page. DOIs that Brouwer does not print were added by the Library (Crossref title match, or a checked manual lookup) and are marked as such.</p>
+  <p class="source-line" data-source-line>Loading…</p>
+  <div class="card controls"><label>Filter <input type="search" id="q" placeholder="author, title, year"></label><span class="small muted" id="n"></span></div>
+  <div id="groups"></div>
+</main>
+<footer class="foot"></footer>
+<script>
+(function () {
+  var E = SRG.esc;
+  var GROUPS = [
+    ["brouwer", "References of Brouwer’s table", "The entries of Brouwer’s reference page (srgtabrefs.html), in his order and wording."],
+    ["literature", "Further literature", "Papers and records naming a parameter set of the table, and the sources of published counts."],
+    ["deposit", "Further published deposits of A. Kovaľ", "Preprints with data on Zenodo (not yet peer-reviewed) that are not in Brouwer’s list under the same DOI; all deposits are listed on the Downloads page."],
+    ["library", "Sources and background used by the Library", "Books, catalogues and software."]
+  ];
+  SRG.refs().then(function (r) {
+    function draw() {
+      var q = document.getElementById("q").value.trim().toLowerCase(), tot = 0;
+      document.getElementById("groups").innerHTML = GROUPS.map(function (g) {
+        var es = r.entries.filter(function (e) { return e.src === g[0] && (!q || (e.text + " " + e.key).toLowerCase().indexOf(q) >= 0); });
+        tot += es.length;
+        if (!es.length) return "";
+        return '<section class="card"><h2>' + E(g[1]) + ' <span class="muted small">(' + es.length + ')</span></h2><p class="note">' + E(g[2]) + "</p>" +
+          es.map(function (e) {
+            var rows = e.rows || [];
+            var rr = rows.length ? '<details><summary>cited on ' + rows.length + " parameter pair" + (rows.length === 1 ? "" : "s") + '</summary><div class="rowchips">' +
+              rows.map(function (x) { return '<a href="' + SRG.rowHref(x) + '">' + E(x.split("_").join(",")) + "</a>"; }).join("") + "</div></details>" : "";
+            return '<div class="refitem" id="' + E(e.id) + '">' + SRG.bibHtml(e).replace('<div class="bibent" id="">', '<div class="bibent">') + rr + "</div>";
+          }).join("") + "</section>";
+      }).join("");
+      document.getElementById("n").textContent = tot + " of " + r.entries.length + " entries";
+      if (r.spence_refs && !q) {
+        document.getElementById("groups").insertAdjacentHTML("beforeend", '<section class="card"><h2>Spence’s references, as on his page</h2><p class="note">Cited verbatim from <a href="https://www.maths.gla.ac.uk/~es/srgraphs.php">Spence’s page</a>; the linked entries above give DOIs.</p><ol>' +
+          r.spence_refs.map(function (s) { return "<li>" + E(s.text) + (s.bib ? ' — <a href="#' + E(s.bib) + '">entry</a>' : "") + "</li>"; }).join("") + "</ol></section>");
+      }
+    }
+    document.getElementById("q").addEventListener("input", draw);
+    draw();
+    if (location.hash) { var t = document.getElementById(location.hash.slice(1)); if (t) { t.scrollIntoView(); t.style.outline = "2px solid var(--focus)"; } }
+  });
+})();
+</script>
+</body>
+</html>

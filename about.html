@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About the SRG Library</title>
+<meta name="description" content="Sources, method, licence and how to cite the SRG Library.">
+<link rel="stylesheet" href="assets/library.css">
+<script src="assets/library.js"></script>
+</head>
+<body data-page="about">
+<header class="top"></header>
+<main class="wrap">
+  <h1>About the SRG Library</h1>
+  <p class="source-line" data-source-line>Loading…</p>
+
+  <section class="card">
+    <h2>What it is</h2>
+    <p>A strongly regular graph srg(v,k,λ,μ) is a k-regular graph on v vertices in which adjacent vertices have λ common neighbours and non-adjacent vertices μ. The Library collects, for every parameter set that A. E. Brouwer’s table lists with v ≤ 1300, what is known: existence status, number of known graphs, constructions, nonexistence reasons, references and downloads — in the spirit of Brouwer’s table, with the underlying data and full citations.</p>
+    <p><b>Brouwer’s table is the authority for status.</b> The Library does not change any status. Where the author of this site has published a result (a Zenodo deposit), it is shown next to Brouwer’s entry with its DOI, never in place of it.</p>
+  </section>
+
+  <section class="card">
+    <h2>Sources and fetch dates</h2>
+    <div id="srcs"></div>
+  </section>
+
+  <section class="card">
+    <h2>Method</h2>
+    <ul>
+      <li><b>Rows.</b> Every line of Brouwer’s 26 table pages (1–50 … 1251–1300) is parsed: status symbol (+, −, ?, ! = unique, N! = exactly N), the row colour (cross-checked against the symbol), v, k, λ, μ, the printed eigenvalues r<sup>f</sup>, s<sup>g</sup> and the comment. A pair is a parameter set and the complement line printed below it.</li>
+      <li><b>Spectrum.</b> r, s, f, g are recomputed exactly from (v,k,λ,μ) and compared with Brouwer’s columns. The Krein conditions, the absolute bound and the conference-graph condition are re-evaluated and compared with Brouwer’s labels “Krein1/2”, “Absolute bound”, “Conf”.</li>
+      <li><b>Counts.</b> Brouwer’s “!” and “N!” give complete classifications. Further counts come from Spence’s data files (read from the files: TOTAL line or the number of matrices), from the text of Ihringer’s page, from published Kovaľ deposits (number of graphs in the deposit), from the GM-switching catalogues of this repository, and from the literature. Counts are never added across sources (overlaps are generally unknown); the headline is the complete count, or else the largest lower bound. A count given for a complement is shown on the pair.</li>
+      <li><b>Families.</b> The comment of each realised line (and of its complement line) is split at “;” and matched against the family patterns listed on the <a href="families.html">Families</a> page; labels ending in “?” (a structure that would realise an open row) and “does not exist” statements are not counted. Where a family has one parameter formula, each label’s arguments were checked to reproduce the row.</li>
+      <li><b>References.</b> Brouwer’s reference page is parsed entry by entry. DOIs he does not print were looked up with the public Crossref API and accepted only for a title similarity ≥ 0.90 with a matching year; four were set by hand after checking (marked in the data). Every entry links at least to Brouwer’s own reference entry.</li>
+      <li><b>SageMath.</b> For every parameter set, <code>graphs.strongly_regular_graph(v,k,λ,μ, existence=True)</code> and the constructor Sage would use (SageMath 10.10, docker image, no network, one CPU).</li>
+      <li><b>Seed database.</b> A column for constructions from a seed-graph database is prepared; it is filled by <code>build_library.py</code> as soon as that database’s report exists (currently: pending).</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>What is deliberately not here</h2>
+    <p>The Library shows only public, citable facts: Brouwer’s table, published papers and preprints, public collections, and the author’s deposited results. It does not show unpublished computations, partial searches, private communications beyond what Brouwer’s table itself records, or graph counts that have not been deposited. For a few parameter sets it shows Brouwer’s status, his comment and the computed spectrum only.</p>
+    <p><b>Known open check.</b> This repository’s earlier page (index.html, v ≤ 100) reports 1,122,556 srg(57,24,11,9) graphs constructed by Godsil–McKay switching. F. Ihringer’s collection lists 31,490,375 graphs for the same parameters (2020 and later). The overlap has not yet been checked, so the Library writes “1,122,556 constructed by GM switching (overlap with Ihringer’s collection not yet checked)” and does not call them new.</p>
+  </section>
+
+  <section class="card">
+    <h2>How to cite</h2>
+    <p>For the status of a parameter set cite Brouwer’s table: A. E. Brouwer, <i>Parameters of strongly regular graphs</i>, <a href="https://www.win.tue.nl/~aeb/graphs/srg/srgtab.html">https://www.win.tue.nl/~aeb/graphs/srg/srgtab.html</a> (accessed on the date you read it), together with the original paper named in the row.</p>
+    <p>For the Library’s compiled data: <span id="cite"></span></p>
+  </section>
+
+  <section class="card">
+    <h2>Licence</h2>
+    <p>The Library’s own data and text (the JSON files, the curated tables in <code>data/library/sources/</code>, the build script and these pages) are released under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>, unless the author decides otherwise. Brouwer’s comments are quoted with attribution and remain his. Third-party collections (Spence, Ihringer, House of Graphs, Sage) are linked and stay under their own terms; no third-party graph file is copied here.</p>
+  </section>
+
+  <section class="card">
+    <h2>Rebuilding</h2>
+    <p><code>python3 -I build_library.py</code> (standard library only) rebuilds <code>data/library/</code> from local copies of the sources; paths are options (<code>--help</code>). <code>tools/enrich_refs.py</code> refreshes the DOI lookups (network), <code>tools/sage_constructions.py</code> the Sage column (inside the SageMath docker image). The pages need no server: open <code>library.html</code> directly.</p>
+  </section>
+</main>
+<footer class="foot"></footer>
+<script>
+(function () {
+  var E = SRG.esc;
+  SRG.load("meta").then(function (m) {
+    var b = (m.brouwer_fetch || "");
+    document.getElementById("srcs").innerHTML = '<div class="tablebox"><table><thead><tr><th>source</th><th>what is used</th><th>date</th></tr></thead><tbody>' + [
+      ['A. E. Brouwer, <a href="' + m.brouwer_base + 'srgtab.html">Parameters of strongly regular graphs</a>', "status, comments, eigenvalue columns, references (all 26 pages + srgtabrefs.html)", "fetched " + E(b.replace("T", " ").replace("Z", " UTC"))],
+      ["A. E. Brouwer, earlier snapshot of the same table", "only for the list of status changes", E(m.brouwer_old_fetch)],
+      ['E. Spence, <a href="' + m.spence_page + '">Strongly regular graphs on at most 64 vertices</a>', "counts read from his 27 data files; his completeness notes; links", "page and files copied 2026-11-07"],
+      ['F. Ihringer, <a href="' + m.ihringer_page + '">Many SRGs</a>', "per-row counts, switching method and seed, from the page text; links", "page copied 2026-11-07"],
+      ["SageMath 10.10 strongly_regular_db", "existence answer and constructor per row", "run 2026-11-07"],
+      ['A. Kovaľ, deposits on Zenodo (<a href="https://tonykoval.github.io/srg-open-cases/papers.html">list</a>)', "published nonexistence, uniqueness and construction results; number of graphs per deposit", "list read 2026-11-07"],
+      ["Literature (papers, arXiv, Zenodo records by others)", "references per row; the “no Cayley graph” results of arXiv:2507.23039; published counts", "curated 2026-11-07"],
+      ["Crossref REST API", "DOIs for Brouwer’s references", "queried 2026-11-07"]
+    ].map(function (r) { return "<tr><td>" + r[0] + "</td><td>" + r[1] + "</td><td>" + r[2] + "</td></tr>"; }).join("") + "</tbody></table></div>";
+    document.getElementById("cite").innerHTML = "A. Kovaľ (compiler), <i>The SRG Library: strongly regular graphs with at most 1300 vertices</i>, data built " + E((m.built || "").slice(0, 10)) +
+      " from Brouwer’s table of " + E(b.slice(0, 10)) + ", https://tonykoval.github.io/srg-database/library.html.";
+  });
+})();
+</script>
+</body>
+</html>

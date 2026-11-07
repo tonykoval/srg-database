@@ -1,0 +1,114 @@
+key	doi	method	similarity	brouwer_title	note
+Akiyama26		unmatched	0.00	Nonexistence of a strongly regular graph with parameters (266, 45, 0, 9): a certificate-free Lean proof	no hit
+AzarijaMarc15		unmatched	0.52	There is no (75,32,10,16) strongly regular graph	best 0.52: Automorphisms of a strongly regular graph with parameters (276, 75, 10, 24) (2014) 10.1134/s1064562414050238
+AzarijaMarc16		unmatched	0.64	There is no (95,40,12,20) strongly regular graph	best 0.64: Orbital Graphs and Strongly Regular Graphs (2016) 10.1017/cbo9781316669846.006
+BehbahaniLam11	10.1016/j.disc.2010.10.005	crossref	1.00	Strongly regular graphs with non-trivial automorphisms	crossref title: Strongly regular graphs with non-trivial automorphisms (2011)
+BondarenkoRadchenko13		unmatched	0.40	On a family of strongly regular graphs with λ = 1	best 0.40: On a family of strongly regular graphs with                     <mml:math xmlns:mml="http://www.w3.org/1998/Math/MathML" altimg="si1.gif" overflow="scroll">                       <mml:mi>λ</mml:mi>                       <mml:mo>=</mml:mo>                       <mml:mn>1</mml:mn>                     </mml:math> (2013) 10.1016/j.jctb.2013.05.005
+Bondarenko_et_al14		unmatched	0.34	Non-existence of (76,30,8,14) strongly regular graph and some structural tools	best 0.34: On concentrators and related approximation constants (2013) 10.1016/j.jmaa.2013.01.019
+Bondarenko_et_al15		unmatched	0.74	There is no strongly regular graph with parameters (460,153,32,60)	best 0.74: Automorphisms of a strongly regular graph with parameters (392, 115, 18, 40) (2015) 10.1134/s1064562414070035
+Bouyukliev_et_al06	10.1007/s10623-006-0019-1	crossref	1.00	Projective two-weight codes with small parameters and their corresponding graphs	crossref title: Projective two-weight codes with small parameters and their corresponding graphs (2006)
+Brady24	10.37236/13296	crossref	1.00	New Strongly Regular Graphs Found via Local Search for Partial Difference Sets	crossref title: New Strongly Regular Graphs Found via Local Search for Partial Difference Sets (2025)
+Brouwer83	10.1002/jgt.3190070411	crossref	1.00	The uniqueness of the strongly regular graph on 77 points	crossref title: The uniqueness of the strongly regular graph on 77 points (1983)
+Brouwer85	10.1016/0166-218x(85)90062-9	crossref	1.00	Some new two-weight codes and strongly regular graphs	crossref title: Some new two-weight codes and strongly regular graphs (1985)
+BrouwerHaemers92	10.1016/0012-365x(92)90532-k	crossref	1.00	Structure and uniqueness of the (81,20,1,6) strongly regular graph	crossref title: Structure and uniqueness of the (81, 20, 1, 6) strongly regular graph (1992)
+Brouwer_et_al03	10.1016/s0012-365x(02)00546-0	crossref	1.00	A root graph that is locally the line graph of the Petersen graph	crossref title: A root graph that is locally the line graph of the Petersen graph (2003)
+BrouwerNeumaier88	10.1007/bf02122552	crossref	1.00	A remark on partial linear spaces of girth 5 with an application to strongly regular graphs	crossref title: A remark on partial linear spaces of girth 5 with an application to strongly regular graphs (1988)
+Bussemaker_et_al89	10.1016/s0195-6698(89)80014-9	crossref	1.00	A (49,16,3,6) strongly regular graph does not exist	crossref title: A (49, 16, 3, 6) Strongly Regular Graph Does Not Exist (1989)
+Cameron_et_al78	10.1016/0021-8693(78)90220-x	crossref	1.00	Strongly regular graphs having strongly regular subconstituents	crossref title: Strongly regular graphs having strongly regular subconstituents (1978)
+Chang60		unmatched	0.52	Association schemes of partially balanced block designs with parameters v = 28, n1 = 12, n2 = 15 and	best 0.52: On the Construction of some Partially Balanced Incomplete block Designs with More than three Associate Classes (1960) 10.1177/0008068319600302
+Chen_Wang26		unmatched			no title or email entry
+Cohen81	10.1007/bf01917586	manual		A new partial geometry with parameters	Crossref best hit 0.88 (Brouwer title truncated at the formula); checked by hand: A new partial geometry with parameters (s,t,alpha)=(7,8,4), J. Geom. 1981
+Coolsaet05	10.36045/bbms/1136902608	manual		The uniqueness of the strongly regular graph srg	Crossref best hit 0.83 (title truncated); checked by hand: Bull. Belg. Math. Soc. Simon Stevin 12 (2005/06)
+Coolsaet_et_al06	10.37236/1058	crossref	1.00	The Strongly Regular (45,12,3,3) graphs	crossref title: The Strongly Regular $(45,12,3,3)$ Graphs (2006)
+CoolsaetDegraer08	10.37236/754	crossref	1.00	Using algebraic properties of minimal idempotents for exhaustive computer generation of association schemes	crossref title: Using Algebraic Properties of Minimal Idempotents for Exhaustive Computer Generation of Association Schemes (2008)
+CossidentePenttila05	10.1112/s0024610705006964	crossref	1.00	Hemisystems on the Hermitian surface	crossref title: HEMISYSTEMS ON THE HERMITIAN SURFACE (2005)
+CrnkovicMaksimovic20	10.55016/ojs/cdm.v15i1.62323	crossref	1.00	Construction of strongly regular graphs having an automorphism group of composite order	crossref title: Construction of strongly regular graphs having an automorphism group of composite order (2020)
+CrnkovicMaksimovic20b	10.26493/2590-9770.1295.25b	crossref	1.00	Strongly regular graphs with parameters (37, 18, 8, 9) having nontrivial automorphisms	crossref title: Strongly regular graphs with parameters (37, 18, 8, 9) having nontrivial automorphisms (2020)
+Crnkovic_et_al16		unmatched	0.48	Strongly regular graphs from orthogonal groups O+(6,2) and O−(6,2)	best 0.48: Self-orthogonal codes from the strongly regular graphs on up to 40 vertices (2016) 10.3934/amc.2016026
+DeClerckDelanote00	10.1007/bf01221059	crossref	1.00	Partial geometries and the triality quadric	crossref title: Partial geometries and the triality quadric (2000)
+DeClerck_et_al02	10.1515/advg.2001.025	crossref	1.00	Perp-systems and partial geometries	crossref title: Perp-systems and partial geometries (2001)
+Degraer07		unmatched	0.67	Isomorph-free exhaustive generation algorithms for association schemes	best 0.67: Isomorph-Free Exhaustive Generation (None) 10.1007/3-540-28991-7_4
+DegraerCoolsaet08	10.1016/j.disc.2006.11.055	crossref	1.00	Classification of some strongly regular subgraphs of the McLaughlin graph	crossref title: Classification of some strongly regular subgraphs of the McLaughlin graph (2008)
+Dissett00		unmatched	0.62	Combinatorial and computational aspects of finite geometries	best 0.62: COMBINATORIAL PROBLEMS RELATED TO CODES, DESIGNS AND FINITE GEOMETRIES (None) 10.37099/mtu.dc.etdr/428
+DixmierZara76		unmatched	0.48	Essai d'une méthode d'étude de certains graphes liés aux groupes classiques	best 0.48: Sous-groupes maximaux de groupes classiques associés aux c*-algèbres (None) 10.35662/unine-thesis-965
+Djematene	10.5281/zenodo.23305123	brouwer-link	1.00	Strongly regular graphs: the automorphism group of a Conway 99-graph, new graphs with parameters (243,22,1,2), and a 2-adic feasibility condition	
+Fickus_et_al15		unmatched	0.62	Equiangular tight frames with centroidal symmetry	best 0.62: Steiner equiangular tight frames redux (2015) 10.1109/sampta.2015.7148910
+Fickus_et_al16		unmatched	0.83	Tremain equiangular tight frames	best 0.83: Steiner equiangular tight frames redux (2015) 10.1109/sampta.2015.7148910
+FiedlerKlin98		unmatched	0.34	A strongly regular graph with the parameters (512,73,438,12,10) and its dual graph	best 0.34: Dynamics of first order differential equation with nonlinear step-like delayed feedback (1998) 10.18500/0869-6632-1998-6-6-3-19
+GavrilyukMakhnev05		unmatched	0.00	On Krein Graphs without Triangles	no hit
+Gewirtz69	10.4153/cjm-1969-101-9	crossref	1.00	Graphs with maximal even girth	crossref title: Graphs with Maximal Even Girth (1969)
+Gewirtz69a	10.1111/j.2164-0947.1969.tb01990.x	manual		The uniqueness of g(2,2,10,56)	Crossref best hit 0.68 (section prefix in Crossref title); checked by hand: Trans. New York Acad. Sci. 31 (1969)
+Godsil92		unmatched	0.89	Krein covers of complete graphs	best 0.89: Covers of Complete Graphs (None) 10.2969/aspm/02410137
+GoethalsSeidel70	10.4153/cjm-1970-067-9	crossref	1.00	Strongly regular graphs derived from combinatorial designs	crossref title: Strongly Regular Graphs Derived from Combinatorial Designs (1970)
+GoethalsSeidel75	10.1016/0012-365x(75)90029-1	crossref	1.00	The regular two-graph on 276 vertices	crossref title: The regular two-graph on 276 vertices (1975)
+Golemac_et_al06	10.37236/1114	crossref	0.95	New regular partial difference sets and strongly regular graphs with parameters (96,20,4,4) and	crossref title: New Regular Partial Difference Sets and Strongly Regular Graphs with Parameters (96,20,4,4) and (96,19,2,4) (2006)
+Gritsenko20		unmatched	0.00	On strongly regular graph with parameters (65, 32, 15, 16)	no hit
+Gulliver96	10.1016/0012-365x(94)00264-j	crossref	1.00	Two new optimal ternary two-weight codes and strongly regular graphs	crossref title: Two new optimal ternary two-weight codes and strongly regular graphs (1996)
+Gulliver96a	10.1016/0893-9659(96)00004-3	crossref	1.00	A new two-weight code and strongly regular graph	crossref title: A new two-weight code and strongly regular graph (1996)
+Haemers81	10.1017/cbo9781107325579.015	crossref	1.00	A new partial geometry constructed from the Hoffman-Singleton graph	crossref title: A new partial geometry constructed from the Hoffman-Singleton graph (1981)
+Haemers93	10.1017/cbo9780511526336.018	crossref	1.00	There exists no (76,21,2,7) strongly regular graph	crossref title: There exists no (76,21,2,7) strongly regular graph (1993)
+HaemersSpence01	10.1006/eujc.2001.0507	crossref	0.95	The Pseudo-Geometric Graphs for Generalised Quadrangles of Order	crossref title: The Pseudo-geometric Graphs for Generalized Quadrangles of Order (3, t) (2001)
+Hancock26		unmatched		SRG(85,30,11,10)	no title or email entry
+HigmanSims68	10.1007/bf01110435	crossref	1.00	A simple group of order 44,352,000	crossref title: A simple group of order 44,352,000 (1968)
+Hill73		unmatched	0.23	On the largest size of cap in S5,3	best 0.23: Rendiconti Lincei, Matematica e Applicazioni (None) 10.4171/rlm
+Hill76		unmatched	0.00	Caps and groups	no hit
+HoffmanSingleton60	10.1147/rd.45.0497	crossref	1.00	On Moore graphs with diameters 2 and 3	crossref title: On Moore Graphs with Diameters 2 and 3 (1960)
+HuangHuangLin07		unmatched	0.00	On a class of strongly regular designs and quasi-semisymmetric designs	no hit
+IoninKharaghani03	10.1002/jcd.10038	crossref	1.00	New Families of Strongly Regular Graphs	crossref title: New families of strongly regular graphs (2003)
+JankoKharaghani02	10.1006/jcta.2001.3231	crossref	1.00	A Block Negacyclic Bush-Type Hadamard Matrix and Two Strongly Regular Graphs	crossref title: A Block Negacyclic Bush-Type Hadamard Matrix and Two Strongly Regular Graphs (2002)
+Jasper26		unmatched			no title or email entry
+JorgensenKlin03	10.37236/1710	crossref	1.00	Switching of edges in strongly regular graphs. I.: A family of partial difference sets on 100 vertices	crossref title: Switching of Edges in Strongly Regular Graphs I: A Family of Partial Difference Sets on 100 Vertices (2003)
+KaskiOstergard07	10.1002/jcd.20145	manual		There are exactly five biplanes with	automatic hit was the ENDM conference abstract; replaced by hand with the J. Combin. Des. article Brouwer cites
+KPRWZ10	10.26493/1855-3974.119.60b	crossref	1.00	Examples of computer experimentation in algebraic combinatorics	crossref title: Examples of computer experimentation in algebraic combinatorics (2010)
+Kohnert07	10.1016/j.dam.2007.03.006	crossref	1.00	Constructing two-weight codes with prescribed groups of automorphisms	crossref title: Constructing two-weight codes with prescribed groups of automorphisms (2007)
+Koval26	10.5281/zenodo.23210829	brouwer-link	1.00	New strongly regular graphs on open parameter sets of Brouwer's table	
+Koval26a	10.5281/zenodo.23209705	brouwer-link	1.00	There is no strongly regular graph with parameters (69,20,7,5)	
+Koval26b	10.5281/zenodo.23210773	brouwer-link	1.00	There is no strongly regular graph with parameters (99,42,21,15)	
+Koval26c	10.5281/zenodo.23211005	brouwer-link	1.00	There is no strongly regular graph with parameters (162,69,36,24)	
+Koval26d	10.5281/zenodo.23210908	brouwer-link	1.00	There is no strongly regular graph with parameters (105,52,21,30)	
+Koval26e	10.5281/zenodo.23210954	brouwer-link	1.00	There is no strongly regular graph with parameters (154,72,26,40)	
+Koval26f	10.5281/zenodo.23263506	brouwer-link	1.00	There is no strongly regular graph with parameters (288,105,52,30)	
+Koval26g	10.5281/zenodo.23263684	brouwer-link	1.00	There is no strongly regular graph with parameters (405,132,63,33)	
+Koval26h	10.5281/zenodo.23275433	brouwer-link	1.00	The Bannai–Munemasa–Venkov lattice method for strongly regular graphs: a uniform discriminant-form condition and new nonexistence results	
+Koval26i	10.5281/zenodo.23279444	brouwer-link	1.00	The regular two-graphs on 126 and 176 points are unique	
+Koval26j	10.5281/zenodo.23296158	brouwer-link	1.00		
+Koval26k	10.5281/zenodo.23295959	brouwer-link	1.00	There is no strongly regular graph with parameters (476,133,60,28)	
+Koval26l	10.5281/zenodo.23296112	brouwer-link	1.00	There is no strongly regular graph with parameters (196,81,42,27)	
+Koval26m	10.5281/zenodo.23296040	brouwer-link	1.00	The strongly regular graphs with parameters (243,110,37,60) and (253,112,36,60) are unique	
+Koval26n	10.5281/zenodo.23313399	brouwer-link	1.00	Strongly regular graphs on 160, 232, 261 and 280 vertices from fusions of orbitals of PΓL(2, 8) and 24:(S3 × S3)	
+Koval26o	10.5281/zenodo.23454170	brouwer-link	1.00	A strongly regular graph with parameters (217,66,15,22)	
+Koval26p	10.5281/zenodo.23771335	brouwer-link	1.00	A strongly regular graph with parameters (833,416,207,208)	
+Koval26q	10.5281/zenodo.23870797	brouwer-link	1.00	A strongly regular graph with parameters (288,112,36,48)	
+Lam-et-al83	10.1016/0012-365x(83)90049-3	crossref	1.00	The nonexistence of ovals in a projective plane of order 10	crossref title: The nonexistence of ovals in a projective plane of order 10 (1983)
+deLange95	10.1023/a:1022481816896	crossref	1.00	Some New Cyclotomic Strongly Regular Graphs	crossref title: Some New Cyclotomic Strongly Regular Graphs (1995)
+Liao-Yu26		unmatched	0.53	Nonexistence of strongly regular graphs via multipoint spherical semidefinite bounds	best 0.53: The constructions of strongly regular signed graphs by signed Cayley graphs (2026) 10.1080/03081087.2026.2670639
+Liao-Wang-Yu-Cai26		unmatched	0.52	Nonexistence of Strongly Regular Graphs via Gegenbauer Positivity and SRG Counting	best 0.52: The constructions of strongly regular signed graphs by signed Cayley graphs (2026) 10.1080/03081087.2026.2670639
+vanLintSchrijver81	10.1007/bf02579178	crossref	1.00	Construction of strongly regular graphs, two-weight codes and partial geometries by finite fields	crossref title: Construction of strongly regular graphs, two-weight codes and partial geometries by finite fields (1981)
+Makhnev02	10.1023/a:1022066425998	crossref	1.00	On the Nonexistence of Strongly Regular Graphs with Parameters (486, 165, 36, 66)	crossref title: On the Nonexistence of Strongly Regular Graphs with Parameters (486, 165, 36, 66) (2002)
+Makhnev17	10.1134/s1064562417040123	crossref	1.00	The graph Kre(4) does not exist	crossref title: The graph Kre(4) does not exist (2017)
+MaksimovicRukavina22		unmatched	0.75	New regular two-graphs on 38 and 42 vertices	best 0.75: On Some Regular Two-Graphs up to 50 Vertices (2023) 10.3390/sym15020408
+Mathon78	10.4153/cjm-1978-029-1	crossref	0.92	Symmetric conference matrices of order	crossref title: Symmetric Conference Matrices of Order pq 2 + 1 (1978)
+McKaySpence01		unmatched	0.40	Classification of regular two-graphs on 36 and 38 vertices	best 0.40: The Strongly Regular $(40,12,2,4)$ Graphs (2000) 10.37236/1500
+Mesner64		unmatched	0.74	Negative Latin square designs	best 0.74: Latin Square Type Designs (None) 10.1002/9780470191750.ch10
+Muzychuk07	10.1007/s10801-006-0030-7	crossref	1.00	A generalization of Wallis-Fon-Der-Flaass construction of strongly regular graphs	crossref title: A generalization of Wallis-Fon-Der-Flaass construction of strongly regular graphs (2006)
+OstergardSoicher16		unmatched	0.18	There is No McLaughlin Geometry	best 0.18: arXiv Update Februar 2016 (2016) 10.65527/6hz35-5b253
+Pasechnik92	10.1007/bf00053382	crossref	0.99	Skew-symmetric association schemes with two classes and strongly regular graphs of type L2n-1(4n-1)	crossref title: Skew-symmetric association schemes with two classes and strongly regular graphs of type L 2n?1(4n?1) (1992)
+Paulus73		unmatched	0.00	Conference matrices and graphs of order 26	no hit
+PenttilaRoyle95	10.1007/bf01388477	crossref	1.00	Sets of type (m,n) in the affine and projective planes of order nine	crossref title: Sets of type (m, n) in the affine and projective planes of order nine (1995)
+Petersen1898		unmatched	0.33	Sur le théorème de Tait	best 0.33: Le théorème central limite pour la marche linéaire sur le tore et le théorème de renouvellement dans Rd (None) 10.70675/60f1b5c9ze05fz4204zbef5z1ee2598d6910
+Plummer26		unmatched		New strongly regular graphs on 1296 vertices from partial difference sets in 𝔽16 × 𝔽81	no title or email entry
+Polhill08	10.37236/849	crossref	1.00	Generalizations of partial difference sets from cyclotomy to nonelementary abelian p-groups	crossref title: Generalizations of Partial Difference Sets from Cyclotomy to Nonelementary Abelian $p$-Groups (2008)
+Polhill09	10.1002/jcd.20206	crossref	1.00	Negative Latin Square type partial difference sets and amorphic association schemes with Galois rings	crossref title: Negative Latin square type partial difference sets and amorphic association schemes with Galois rings (2009)
+deResmini87	10.1016/0097-3165(87)90021-5	crossref	1.00	A 35-set of type (2,5) in PG(2,9)	crossref title: A 35-set of type (2, 5) in PG(2, 9) (1987)
+deResminiMigliori86		unmatched	0.85	A 78-set of Type (2,6) in PG(2,16)	best 0.85: A 35-set of type (2, 5) in PG(2, 9) (1987) 10.1016/0097-3165(87)90021-5
+Rozenfeld73		unmatched	0.00	The construction and properties of certain classes of strongly regular graphs	no hit
+Seidel68	10.1016/0024-3795(68)90008-6	crossref	1.00	Strongly regular graphs with (-1,1,0) adjacency matrix having eigenvalue 3	crossref title: Strongly regular graphs with (—1,1,0) adjacency matrix having eigenvalue 3 (1968)
+ShpectorovZhao25		unmatched	0.00	Strongly regular graphs with parameters (85, 14, 3, 2) do not exist	no hit
+Shrikhande59	10.1214/aoms/1177706207	crossref	0.91	The uniqueness of the L2 association scheme	crossref title: The Uniqueness of the $\mathrm{L}_2$ Association Scheme (1959)
+Spence00	10.37236/1500	crossref	1.00	The Strongly Regular (40,12,2,4) Graphs	crossref title: The Strongly Regular $(40,12,2,4)$ Graphs (2000)
+Tarry01		unmatched	0.00	Le problème des 36 officiers	no hit
+Verma26		unmatched	0.43	A symmetric conference matrix of order 86	best 0.43: The matrix remembers (2026) 10.1016/j.immuni.2026.09.021
+Weisfeiler	10.1007/bfb0089374	crossref	1.00	On Construction and Identification of Graphs	crossref title: On Construction and Identification of Graphs (1976)
+WilbrinkBrouwer83	10.1016/1385-7258(83)90047-1	crossref	1.00	A (57,14,1) strongly regular graph does not exist	crossref title: A (57, 14, 1) strongly regular graph does not exist (1983)
+Yip26		unmatched			no title or email entry
+Yip26a		unmatched			no title or email entry

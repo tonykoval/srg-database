@@ -1,0 +1,6 @@
+# GM-switching catalogues published in this repository (srg-database). Counts as published in index.html (commit 4a78336 "Final count"); README.md/catalogs/README.md still show 395,966 for 49_24_11_12 (an earlier stage).
+# Overlap with other collections: 50_21_8_9 checked disjoint from Spence's 18 (docs/srg_publications_and_downloads_2026_05_30.md); 57_24_11_9 NOT yet compared with Ihringer's 31,490,375.
+row	n	note	url
+50_21_8_9	16939	constructed by cascading Godsil-McKay switching (srg-database catalogues; disjoint from Spence's 18 graphs, other collections not compared)	https://github.com/tonykoval/srg-database
+49_24_11_12	418389	constructed by cascading Godsil-McKay switching (srg-database index.html; overlap with other collections not checked)	https://github.com/tonykoval/srg-database
+57_24_11_9	1122556	1,122,556 constructed by GM switching (overlap with Ihringer's collection not yet checked)	https://github.com/tonykoval/srg-database

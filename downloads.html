@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SRG Downloads</title>
+<meta name="description" content="Where the strongly regular graphs live: Spence's and Ihringer's collections, SageMath, House of Graphs, Zenodo deposits, and the Library's own data files.">
+<link rel="stylesheet" href="assets/library.css">
+<script src="assets/library.js"></script>
+</head>
+<body data-page="downloads">
+<header class="top"></header>
+<main class="wrap">
+  <h1>Downloads</h1>
+  <p class="lede">Where the graphs themselves can be obtained, and the Library’s own data. Third-party files are <b>linked, not copied</b>: they stay with their authors and under their terms (neither Spence’s nor Ihringer’s page states a licence).</p>
+  <p class="source-line" data-source-line>Loading…</p>
+
+  <section class="card">
+    <h2>The Library’s data (CC BY 4.0)</h2>
+    <p>All data behind these pages, rebuilt by <code>build_library.py</code> (Python standard library only) from the sources listed on the <a href="about.html">About</a> page. JSON files, one per range of 100 vertices; each also exists as a <code>.js</code> wrapper used by the pages so that they work offline from <code>file://</code>.</p>
+    <ul>
+      <li><a href="data/library/index.json">index.json</a> — one compact line per parameter set (status, count, first comment, families, eigenvalues)</li>
+      <li id="rowfiles"></li>
+      <li><a href="data/library/refs.json">refs.json</a> — bibliography; <a href="data/library/families.json">families.json</a>; <a href="data/library/reasons.json">reasons.json</a>; <a href="data/library/downloads.json">downloads.json</a>; <a href="data/library/meta.json">meta.json</a> (dates, statistics, validation)</li>
+      <li>Curated inputs in <code>data/library/sources/</code>: <a href="data/library/sources/sage_constructions.tsv">sage_constructions.tsv</a> (Sage run), <a href="data/library/sources/ref_links.tsv">ref_links.tsv</a> and <a href="data/library/sources/ref_urls.tsv">ref_urls.tsv</a> (DOI/URL lookups), <a href="data/library/sources/spence_counts.tsv">spence_counts.tsv</a>, <a href="data/library/sources/ihringer_rows.tsv">ihringer_rows.tsv</a>, <a href="data/library/sources/our_deposits.tsv">our_deposits.tsv</a>, <a href="data/library/sources/srgdb_catalogs.tsv">srgdb_catalogs.tsv</a>, <a href="data/library/sources/counts_literature.tsv">counts_literature.tsv</a></li>
+    </ul>
+    <p class="note">Brouwer’s comments are quoted from his table with attribution; the table remains the authority and should be cited as such.</p>
+  </section>
+
+  <section class="card">
+    <h2>A. E. Brouwer — Parameters of strongly regular graphs</h2>
+    <p><a href="https://aeb.win.tue.nl/graphs/srg/srgtab.html">aeb.win.tue.nl/graphs/srg/srgtab.html</a> — the reference table (26 pages up to 1300 vertices, references, families, many vertices). Individual graphs are described on Brouwer’s graph pages linked from there.</p>
+  </section>
+
+  <section class="card">
+    <h2>E. Spence — Strongly regular graphs on at most 64 vertices</h2>
+    <p><a href="https://www.maths.gla.ac.uk/~es/srgraphs.php">www.maths.gla.ac.uk/~es/srgraphs.php</a> (University of Glasgow) — 0/1 adjacency matrices, some bzip2-compressed. Counts below were read from the files (the “TOTAL NUMBER” line, or by counting matrices).</p>
+    <div class="tablebox"><table><thead><tr><th>parameters</th><th class="num">graphs</th><th>status of the count</th><th>file</th></tr></thead><tbody id="spence"></tbody></table></div>
+  </section>
+
+  <section class="card">
+    <h2>F. Ihringer — Many SRGs</h2>
+    <p><a href="https://math.ihringer.org/srgs.php">math.ihringer.org/srgs.php</a> — large graph6 collections from Godsil–McKay (GM), Wang–Qiu–Hu (WQH) and Kantor-type switching (arXiv <a href="https://arxiv.org/abs/2012.08390">2012.08390</a>, <a href="https://arxiv.org/abs/2107.00076">2107.00076</a>, <a href="https://arxiv.org/abs/2204.04755">2204.04755</a>; program on <a href="https://github.com/ferihr/graphswitching">GitHub</a>). Each count is a lower bound for its parameter set.</p>
+    <div class="tablebox"><table><thead><tr><th>parameters</th><th class="num">graphs</th><th>how</th><th>section of the page</th></tr></thead><tbody id="ihr"></tbody></table></div>
+  </section>
+
+  <section class="card">
+    <h2>Published deposits of A. Kovaľ (Zenodo)</h2>
+    <p>Each record contains the paper and its data archive (graph6 files, certificates, scripts). Overview pages: <a href="https://tonykoval.github.io/srg-open-cases/papers.html">srg-open-cases / papers</a>, <a href="https://tonykoval.github.io/srg-open-cases/graphs.html">new graphs</a>.</p>
+    <ul id="deps"></ul>
+    <p>Also in this repository: <a href="catalogs/README.md">catalogs/</a> — graphs constructed by cascading Godsil–McKay switching for (50,21,8,9) (16,939), (49,24,11,12) and (57,24,11,9) (samples; see <a href="index.html">index.html</a>). For (57,24,11,9) the 1,122,556 graphs constructed by GM switching have not yet been compared with Ihringer’s 31,490,375.</p>
+  </section>
+
+  <section class="card">
+    <h2>Software and other databases</h2>
+    <ul>
+      <li><a href="https://doc.sagemath.org/html/en/reference/graphs/sage/graphs/strongly_regular_db.html">SageMath strongly_regular_db</a> — one constructed representative for each parameter set Sage knows; the Library records Sage 10.10’s answer for every row (<a href="data/library/sources/sage_constructions.tsv">sage_constructions.tsv</a>, produced by <a href="tools/sage_constructions.py">tools/sage_constructions.py</a>).</li>
+      <li><a href="https://houseofgraphs.org/">House of Graphs</a> — searchable database of graphs with invariants (Coolsaet, D’hondt, Goedgebeur, <a href="https://doi.org/10.1016/j.dam.2022.10.013">doi:10.1016/j.dam.2022.10.013</a>).</li>
+      <li><a href="https://users.cecs.anu.edu.au/~bdm/data/formats.html">graph6 format</a> (B. McKay).</li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>Downloads per parameter pair</h2>
+    <div class="tablebox"><table><thead><tr><th>parameters</th><th>where</th></tr></thead><tbody id="per"></tbody></table></div>
+  </section>
+</main>
+<footer class="foot"></footer>
+<script>
+(function () {
+  var E = SRG.esc;
+  var files = [];
+  for (var lo = 1; lo <= 1300; lo += 100) { var p = function (n) { return ("000" + n).slice(-4); }; files.push('<a href="data/library/rows-' + p(lo) + "-" + p(lo + 99) + '.json">' + lo + "–" + (lo + 99) + "</a>"); }
+  document.getElementById("rowfiles").innerHTML = "Full records per range: " + files.join(", ");
+  SRG.load("downloads").then(function (d) {
+    var link = function (id) { return '<a class="rowlink" href="' + SRG.rowHref(id) + '">' + E(SRG.params(id)) + "</a>"; };
+    document.getElementById("spence").innerHTML = d.spence.map(function (s) {
+      return "<tr><td>" + link(s.row) + '</td><td class="num">' + SRG.fmt(s.n) + "</td><td>" + (s.kind === "complete" ? "complete classification" : "lower bound") + '</td><td><a href="' + E(s.url) + '">' + E(s.file) + "</a></td></tr>";
+    }).join("");
+    document.getElementById("ihr").innerHTML = d.ihringer.map(function (h) {
+      return "<tr><td>" + link(h.row) + '</td><td class="num"><a href="' + E(h.url) + '">' + SRG.fmt(h.count) + "</a></td><td>" + E(h.method) + "</td><td>" + E(h.section) + "</td></tr>";
+    }).join("");
+    document.getElementById("deps").innerHTML = d.deposits.map(function (x) {
+      return "<li>" + E(x.title) + ' — <a href="https://doi.org/' + E(x.doi) + '">doi:' + E(x.doi) + "</a>" + (x.page ? ' · <a href="' + E(x.page) + '">page</a>' : "") + "</li>";
+    }).join("");
+    var keys = Object.keys(d.rows).sort(function (a, b) { var x = a.split("_").map(Number), y = b.split("_").map(Number); for (var i = 0; i < 4; i++) if (x[i] !== y[i]) return x[i] - y[i]; return 0; });
+    document.getElementById("per").innerHTML = keys.map(function (k) {
+      return "<tr><td>" + link(k) + "</td><td>" + d.rows[k].map(function (x) { return '<a href="' + E(x.url) + '">' + E(x.label) + "</a>"; }).join("<br>") + "</td></tr>";
+    }).join("");
+  });
+})();
+</script>
+</body>
+</html>

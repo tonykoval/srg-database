@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SRG Library</title>
+<meta name="description" content="Everything known about strongly regular graphs with at most 1300 vertices: status per A. E. Brouwer's table, counts of known graphs, constructions, nonexistence reasons, references and downloads.">
+<link rel="stylesheet" href="assets/library.css">
+<script src="assets/library.js"></script>
+</head>
+<body data-page="library">
+<header class="top"></header>
+<main class="wrap">
+  <h1>The SRG Library</h1>
+  <p class="lede">Every feasible parameter set of a strongly regular graph with at most 1300 vertices, as listed in A. E. Brouwer’s table, with what is known about it: whether a graph exists, how many are known, how they are built, why some cannot exist, the papers, and where the graphs can be downloaded.</p>
+  <p class="source-line" data-source-line>Loading…</p>
+
+  <section aria-labelledby="h-head">
+    <h2 id="h-head" class="sr" style="position:absolute;left:-9999px">Headline numbers</h2>
+    <div class="tiles" id="tiles"></div>
+  </section>
+
+  <section class="card" aria-labelledby="h-map">
+    <div class="chart-head">
+      <h2 id="h-map" style="margin:0">Map of all parameter sets</h2>
+      <div class="legend" id="mapLegend" role="group" aria-label="Show or hide a status"></div>
+    </div>
+    <div class="controls" style="margin-bottom:8px">
+      <label>Vertical axis
+        <select id="yAxis">
+          <option value="k">valency k</option>
+          <option value="s">smallest eigenvalue −s</option>
+          <option value="mu">μ</option>
+        </select></label>
+      <label>Highlight a family
+        <select id="famHi"><option value="">(none)</option></select></label>
+      <label>Highlight
+        <select id="hiOther">
+          <option value="">(none)</option>
+          <option value="complete">classified completely</option>
+          <option value="counted">with a count of known graphs</option>
+          <option value="conference">conference parameters</option>
+          <option value="ours">with a published Kovaľ deposit</option>
+          <option value="changed">changed since the previous snapshot</option>
+        </select></label>
+    </div>
+    <div class="mapbox" id="mapbox">
+      <svg id="map" viewBox="0 0 1000 520" role="img" aria-labelledby="mapTitle mapDesc">
+        <title id="mapTitle">Strongly regular graph parameter sets with v ≤ 1300</title>
+        <desc id="mapDesc">Scatter plot: number of vertices v across, the chosen quantity up; one mark per parameter pair of Brouwer’s table, filled circle = exists, square = does not exist, ring = open. The same data are in the table further down.</desc>
+      </svg>
+      <div class="tooltip" id="tip" role="status"></div>
+    </div>
+    <p class="note" style="margin-top:6px">One mark per parameter pair: Brouwer lists a parameter set and its complement together, and the map plots the line he lists first. Hover or tap a mark for details; click to open the row. Shapes repeat the colours: ● exists, ■ does not exist, ○ open.</p>
+  </section>
+
+  <div class="grid2">
+    <section class="card" aria-labelledby="h-bars">
+      <h2 id="h-bars">Status by number of vertices</h2>
+      <div class="legend" style="margin-bottom:8px">
+        <span><span class="key yes"></span> exists</span><span><span class="key no"></span> does not exist</span><span><span class="key open"></span> open</span>
+      </div>
+      <div class="rbars" id="rbars"></div>
+      <p class="note" style="margin-top:8px">Parameter pairs per range of 100 vertices; segment widths are proportional to the counts within each range.</p>
+    </section>
+    <section class="card" aria-labelledby="h-chg">
+      <h2 id="h-chg">Recent changes in Brouwer’s table</h2>
+      <div id="changes"></div>
+      <p class="note" style="margin-top:8px">A timeline of when rows were settled is not shown: Brouwer’s table carries dates only for the papers it cites, and most classical constructions and bounds have no reference attached, so the dates would mislead. Instead, the rows whose status changed between two snapshots of the table.</p>
+    </section>
+  </div>
+
+  <section class="card" aria-labelledby="h-tab" id="table">
+    <h2 id="h-tab">Table</h2>
+    <div class="controls" style="margin-bottom:10px">
+      <label>Search (parameters or comment)
+        <input type="search" id="q" placeholder="e.g. 57 24, Paley, GQ(3,3), Krein"></label>
+      <label>Status
+        <select id="fStatus"><option value="">all</option><option value="+">exists</option><option value="-">does not exist</option><option value="?">open</option></select></label>
+      <label>v from <input type="number" id="vmin" min="1" max="1300" placeholder="1"></label>
+      <label>to <input type="number" id="vmax" min="1" max="1300" placeholder="1300"></label>
+      <label>Family
+        <select id="fFam"><option value="">any</option></select></label>
+      <label class="cb"><input type="checkbox" id="fComp"> complements</label>
+      <label class="cb"><input type="checkbox" id="fCount"> with counts only</label>
+    </div>
+    <div class="tablebox">
+      <table>
+        <thead><tr><th>parameters (v,k,λ,μ)</th><th>status</th><th class="num">known graphs</th><th>eigenvalues r<sup>f</sup>, s<sup>g</sup></th><th>Brouwer’s comment (first part)</th></tr></thead>
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+    <div class="pager"><button class="btn" id="prev" type="button">Previous</button><span id="pinfo"></span><button class="btn" id="next" type="button">Next</button></div>
+  </section>
+</main>
+<div class="drawer-bg" id="dbg"></div>
+<aside class="drawer" id="drawer" aria-modal="true" role="dialog" aria-labelledby="dtitle">
+  <div class="dh"><h2 id="dtitle">srg</h2><a class="btn" id="dbrouwer" href="#">Brouwer</a><button class="btn" id="dclose" type="button">Close</button></div>
+  <div class="db" id="dbody"></div>
+</aside>
+<footer class="foot"></footer>
+<script src="assets/library-page.js"></script>
+</body>
+</html>

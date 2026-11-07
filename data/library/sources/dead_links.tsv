@@ -1,0 +1,3 @@
+# URLs printed in Brouwer's references that did not resolve when checked (tools/validate_library.py --online); the Library omits them and links Brouwer's entry instead
+url	checked	note
+http://www.stat.ncsu.edu/information/library/mimeo.php	2026-11-07	Mesner64: NC State mimeo series page (connection error)

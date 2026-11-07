@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SRG Families</title>
+<meta name="description" content="Families of strongly regular graphs (Paley, triangular, Latin square, Steiner, generalized quadrangles, partial geometries, two-graphs, polar spaces, two-weight codes and more): parameter formulas and the rows of Brouwer's table they realise.">
+<link rel="stylesheet" href="assets/library.css">
+<script src="assets/library.js"></script>
+</head>
+<body data-page="families">
+<header class="top"></header>
+<main class="wrap">
+  <h1>Families and constructions</h1>
+  <p class="lede">The constructions named in the comments of Brouwer’s table, grouped into families. For each family: what it is, its parameter formula where there is a single one, and the parameter pairs whose comment names it (realised rows only; a label followed by “?” in an open row is a geometry that would realise the row and is not counted).</p>
+  <p class="source-line" data-source-line>Loading…</p>
+  <div class="card"><h2>Coverage</h2><div id="cov"></div>
+    <p class="note">A pair can belong to several families. Formulas were checked against every labelled row: the check column counts the labels whose arguments reproduce the row’s parameters (for example Paley(q) on a row with v = q).</p></div>
+  <div id="fams"></div>
+</main>
+<footer class="foot"></footer>
+<script>
+(function () {
+  var E = SRG.esc;
+  Promise.all([SRG.load("families"), SRG.refs(), SRG.load("meta")]).then(function (a) {
+    var fams = a[0], refs = a[1], meta = a[2];
+    var plus = meta.stats.by_status["+"] || 0;
+    var cov = '<div class="tablebox"><table><thead><tr><th>family</th><th class="num">realised pairs</th><th class="num">share of the ' + SRG.fmt(plus) + ' realised pairs</th><th class="num">formula check</th></tr></thead><tbody>' +
+      fams.slice().sort(function (x, y) { return y.rows.length - x.rows.length; }).map(function (f) {
+        return '<tr><td><a href="#' + E(f.id) + '">' + E(f.name) + '</a></td><td class="num">' + f.rows.length + '</td><td class="num">' + (100 * f.rows.length / plus).toFixed(1) + '%</td><td class="num">' +
+          (f.check ? f.check.ok + " ok" + (f.check.bad ? ", " + f.check.bad + " not matching" : "") : "—") + "</td></tr>";
+      }).join("") + "</tbody></table></div>";
+    cov += '<p class="small" style="margin-top:8px">' + SRG.fmt(meta.stats.with_constructions) + " of the " + SRG.fmt(plus) + " realised pairs carry at least one of these family labels; the others are realised by constructions Brouwer names individually (a paper, a group, a person) — see their rows.</p>";
+    document.getElementById("cov").innerHTML = cov;
+    document.getElementById("fams").innerHTML = fams.map(function (f) {
+      var rs = f.rows.map(function (x) { return '<a href="' + SRG.rowHref(x) + '">' + E(x.split("_").join(",")) + "</a>"; }).join("");
+      var rf = f.refs.map(function (b) { return refs.map[b]; }).filter(Boolean).map(function (b) { return SRG.bibHtml(b); }).join("");
+      return '<section class="card" id="' + E(f.id) + '"><h2>' + E(f.name) + '</h2><p>' + E(f.desc) + "</p>" +
+        (f.formula ? '<p><b>Parameters.</b> ' + E(f.formula) + "</p>" : "") +
+        "<p><b>" + f.rows.length + " parameter pair" + (f.rows.length === 1 ? "" : "s") + "</b> in Brouwer’s table (v ≤ 1300) carry this label:</p>" +
+        '<div class="rowchips">' + (rs || '<span class="muted">none</span>') + "</div>" +
+        (rf ? '<details style="margin-top:10px"><summary>References</summary>' + rf + "</details>" : "") + "</section>";
+    }).join("");
+    if (location.hash) { var t = document.getElementById(location.hash.slice(1)); if (t) t.scrollIntoView(); }
+  });
+})();
+</script>
+</body>
+</html>

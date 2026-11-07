@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SRG Statistics</title>
+<meta name="description" content="Statistics of Brouwer's table of strongly regular graph parameters up to 1300 vertices: rows by status and range, nonexistence reasons, families, counts and sources, validation.">
+<link rel="stylesheet" href="assets/library.css">
+<script src="assets/library.js"></script>
+</head>
+<body data-page="stats">
+<header class="top"></header>
+<main class="wrap">
+  <h1>Statistics</h1>
+  <p class="lede">Counts are per parameter pair (a parameter set and its complement, one line pair of Brouwer’s table) unless stated otherwise.</p>
+  <p class="source-line" data-source-line>Loading…</p>
+  <div class="tiles" id="tiles"></div>
+  <div class="grid2">
+    <section class="card"><h2>By range of v</h2><div id="ranges"></div></section>
+    <section class="card"><h2>Why rows do not exist</h2><div id="reasons"></div>
+      <p class="note">A row can carry several reasons (e.g. Krein and the absolute bound). “Specific paper” covers every nonexistence result Brouwer credits to a paper or author.</p></section>
+  </div>
+  <div class="grid2">
+    <section class="card"><h2>How much is known per realised pair</h2><div id="known"></div></section>
+    <section class="card"><h2>Sources of counts</h2><div id="srcs"></div>
+      <p class="note">Pairs that have at least one count from the source. Brouwer’s “!” and “N!” are complete classifications; Spence’s counts are complete except (37,18,8,9) and (50,21,8,9); Ihringer’s, the deposits’ and the switching catalogues’ counts are lower bounds.</p></section>
+  </div>
+  <div class="grid2">
+    <section class="card"><h2>SageMath versus Brouwer</h2><div id="sage"></div>
+      <p class="note">Per parameter set (both lines of a pair). Sage “True” means Sage can construct a graph; “False” that Sage knows a nonexistence argument; “Unknown” neither. <span id="sagecmp"></span></p></section>
+    <section class="card"><h2>Validation</h2><div id="valid"></div></section>
+  </div>
+</main>
+<footer class="foot"></footer>
+<script>
+(function () {
+  var E = SRG.esc;
+  function table(head, rows, numcols) {
+    return '<div class="tablebox"><table><thead><tr>' + head.map(function (h, i) { return "<th" + (numcols.indexOf(i) >= 0 ? ' class="num"' : "") + ">" + h + "</th>"; }).join("") + "</tr></thead><tbody>" +
+      rows.map(function (r) { return "<tr>" + r.map(function (c, i) { return "<td" + (numcols.indexOf(i) >= 0 ? ' class="num"' : "") + ">" + c + "</td>"; }).join("") + "</tr>"; }).join("") + "</tbody></table></div>";
+  }
+  Promise.all([SRG.load("meta"), SRG.load("reasons"), SRG.load("index")]).then(function (a) {
+    var m = a[0], s = m.stats, reasons = a[1], idx = a[2];
+    var b = s.by_status;
+    document.getElementById("tiles").innerHTML = [
+      ["Parameter pairs", s.pairs, ""], ["Parameter sets", s.sets, ""], ["Exist", b["+"], "yes"], ["Do not exist", b["-"], "no"], ["Open", b["?"], "open"],
+      ["Classified completely", s.head_kind.complete || 0, ""], ["With a published lower bound > 1", s.head_kind.lower || 0, ""],
+      ["With a family label", s.with_constructions, ""], ["With a specific reference", s.with_refs, ""], ["With download links", s.with_downloads, ""]
+    ].map(function (x) { return '<div class="tile"><div class="lab">' + (x[2] ? '<span class="key ' + x[2] + '"></span>' : "") + E(x[0]) + '</div><div class="val">' + SRG.fmt(x[1]) + "</div></div>"; }).join("");
+    var tot = [0, 0, 0];
+    document.getElementById("ranges").innerHTML = table(["v", SRG.statusHtml("+"), SRG.statusHtml("-"), SRG.statusHtml("?"), "pairs", "open share"],
+      s.ranges.map(function (g) { tot[0] += g.plus; tot[1] += g.minus; tot[2] += g.open; var t = g.plus + g.minus + g.open;
+        return [g.lo + "–" + g.hi, g.plus, g.minus, g.open, t, (100 * g.open / t).toFixed(0) + "%"]; }).concat([["<b>all</b>", "<b>" + tot[0] + "</b>", "<b>" + tot[1] + "</b>", "<b>" + tot[2] + "</b>", "<b>" + (tot[0] + tot[1] + tot[2]) + "</b>", (100 * tot[2] / (tot[0] + tot[1] + tot[2])).toFixed(0) + "%"]]), [1, 2, 3, 4, 5]);
+    document.getElementById("reasons").innerHTML = table(["reason", "pairs"], reasons.map(function (r) { return [E(r.name), r.pairs]; }), [1]);
+    var hk = s.head_kind;
+    document.getElementById("known").innerHTML = table(["what is known", "pairs"], [
+      ["exact number of graphs (complete classification)", hk.complete || 0],
+      ["a published lower bound greater than one", hk.lower || 0],
+      ["exists, no count recorded (at least one)", hk.exists || 0]], [1]);
+    var srcName = { brouwer: "Brouwer’s table (! / N!)", spence: "Spence’s collection", ihringer: "Ihringer’s collection", ours: "Kovaľ deposits (Zenodo)", srgdb: "srg-database switching catalogues", literature: "literature (curated)" };
+    document.getElementById("srcs").innerHTML = table(["source", "pairs"], Object.keys(s.count_sources).map(function (k) { return [E(srcName[k] || k), s.count_sources[k]]; }), [1]);
+    // sage vs brouwer per set
+    var F = {}; idx.fields.forEach(function (f, i) { F[f] = i; });
+    document.getElementById("sage").innerHTML = table(["Sage answer", "parameter sets"], Object.keys(s.sage).map(function (k) { return [E(k === "n/a" ? "not shown (restricted rows)" : k), s.sage[k]]; }), [1]);
+    var sc = m.warnings.filter(function (w) { return w.indexOf("sage:") === 0; }).length;
+    document.getElementById("sagecmp").textContent = sc ? sc + " disagreements with Brouwer (listed under Validation)." : "Sage and Brouwer never disagree (no Sage True on a “−” or “?” row, no Sage False on a “+” row).";
+    var v = [];
+    v.push("All " + SRG.fmt(s.sets) + " parameter sets of Brouwer’s 26 pages (v ≤ 1300) are in the Library; each status symbol agrees with the row colour.");
+    v.push("Eigenvalues and multiplicities are recomputed exactly from (v,k,λ,μ) and compared with Brouwer’s r<sup>f</sup>, s<sup>g</sup> columns.");
+    v.push("Every “Krein”, “Absolute bound” and “Conf” label of Brouwer was re-checked against the classical inequalities; every row failing one of them is marked “−”.");
+    var fc = s.family_checks;
+    v.push("Family formulas checked on the labelled rows: " + Object.keys(fc).map(function (k) { return E(k) + " " + fc[k].ok + "/" + (fc[k].ok + fc[k].bad); }).join(", ") + ".");
+    v.push("Build warnings: " + (m.warnings.length ? m.warnings.length + " — " + m.warnings.slice(0, 5).map(E).join("; ") : "none") + ".");
+    document.getElementById("valid").innerHTML = "<ul>" + v.map(function (x) { return "<li>" + x + "</li>"; }).join("") + "</ul>";
+  });
+})();
+</script>
+</body>
+</html>

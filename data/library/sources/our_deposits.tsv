@@ -1,0 +1,25 @@
+# Public deposits of A. Kovaľ (Zenodo), as listed on https://tonykoval.github.io/srg-open-cases/papers.html (read 2026-11-07).
+# Only deposited, public results. rows = primary rows of Brouwer's table the deposit settles or concerns (complements follow automatically).
+# counts = graphs contained in the deposit (lower bounds, never classifications unless kind = uniqueness), from srg-open-cases graphs.html / papers.html.
+# page = the srg-open-cases page of the result. Extra rows of the BMV paper come from the programme ledger (grade PROVED-OURS-AUDITED with this DOI).
+doi	kind	title	rows	counts	page
+10.5281/zenodo.23209705	nonexistence	There is no strongly regular graph with parameters (69,20,7,5)	69_20_7_5		srg69.html
+10.5281/zenodo.23210773	nonexistence	There is no strongly regular graph with parameters (99,42,21,15)	99_42_21_15		srg99_42.html
+10.5281/zenodo.23210908	nonexistence	There is no strongly regular graph with parameters (105,52,21,30)	105_52_21_30		srg105.html
+10.5281/zenodo.23210954	nonexistence	There is no strongly regular graph with parameters (154,72,26,40)	154_72_26_40		srg154.html
+10.5281/zenodo.23211005	nonexistence	There is no strongly regular graph with parameters (162,69,36,24)	162_69_36_24		srg162.html
+10.5281/zenodo.23296112	nonexistence	There is no strongly regular graph with parameters (196,81,42,27)	196_81_42_27		srg196.html
+10.5281/zenodo.23263506	nonexistence	There is no strongly regular graph with parameters (288,105,52,30)	288_105_52_30		srg288.html
+10.5281/zenodo.23281574	nonexistence	There is no strongly regular graph with parameters (405,132,63,33)	405_132_63_33		srg405.html
+10.5281/zenodo.23295959	nonexistence	There is no strongly regular graph with parameters (476,133,60,28)	476_133_60_28		srg476.html
+10.5281/zenodo.23281359	nonexistence	The Bannai–Munemasa–Venkov lattice method for strongly regular graphs: a uniform discriminant-form condition and new nonexistence results	ledger		bmv.html
+10.5281/zenodo.23281436	structure	On the local structure of a hypothetical strongly regular graph with parameters (99,14,1,2)	99_14_1_2
+10.5281/zenodo.23279444	uniqueness	The regular two-graphs on 126 and 176 points are unique	125_52_15_26;175_72_20_36		twographs.html
+10.5281/zenodo.23296040	uniqueness	The strongly regular graphs with parameters (243,110,37,60) and (253,112,36,60) are unique	243_110_37_60;253_112_36_60		uniq243_253.html
+10.5281/zenodo.23210829	existence	New strongly regular graphs on open parameter sets of Brouwer's table	250_81_24_27;300_69_18_15;320_87_22_24;320_88_24_24;324_114_36_42;324_133_52_56;324_136_58_56;486_97_16_20;486_100_22_20	250_81_24_27:1;300_69_18_15:2;320_87_22_24:35;320_88_24_24:95;324_114_36_42:22;324_133_52_56:10;324_136_58_56:93;486_97_16_20:2;486_100_22_20:2	graphs.html
+10.5281/zenodo.23296158	existence	Strongly regular graphs on 306, 400, 576, 784 and 1296 vertices from multi-orbit coset fusion and Bush-type Hadamard matrices	306_55_4_11;400_171_74_72;576_253_112_110;784_351_158_156;1296_595_274_272	306_55_4_11:1;400_171_74_72:7;576_253_112_110:7;784_351_158_156:5;1296_595_274_272:6	graphs.html
+10.5281/zenodo.23313400	existence	Strongly regular graphs on 160, 232, 261 and 280 vertices from fusions of orbitals of PΓL(2,8) and 2⁴:(S₃×S₃)	160_54_18_18;232_63_14_18;261_64_14_16;280_63_14_14	160_54_18_18:4;232_63_14_18:1;261_64_14_16:2;280_63_14_14:2	graphs.html
+10.5281/zenodo.23454170	existence	A strongly regular graph with parameters (217,66,15,22)	217_66_15_22	217_66_15_22:1	srg217.html
+10.5281/zenodo.23771335	existence	A strongly regular graph with parameters (833,416,207,208)	833_416_207_208	833_416_207_208:24	srg833.html
+10.5281/zenodo.23870797	existence	A strongly regular graph with parameters (288,112,36,48)	288_112_36_48	288_112_36_48:1	srg288_112.html
+10.5281/zenodo.23491895	rediscovery	Three further strongly regular graphs with parameters (243,22,1,2)	243_22_1_2		srg243_22.html

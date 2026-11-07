@@ -1,0 +1,29 @@
+# From the page text of https://math.ihringer.org/srgs.php (local copy, 2026-11-07). Files are only linked, not copied.
+row	count	label	method	section	url
+57_24_11_9	31490375	SRG(57, 24, 11, 9)	GM with 4,n-4, 9 steps, from some S(2, 3, 19), 3.1G	Graphs in the Accepted Paper	https://www.dropbox.com/s/joho81q57mwizsn/srgs_57_24_11_9.gz?dl=0
+63_30_13_15	13505292	SRG(63, 30, 13, 15)	GM with 4,n-4, 5 steps, from Sp(6, 2), 1.9G	Graphs in the Accepted Paper	https://www.dropbox.com/s/foyut7mlhl2g4ky/srgs_63_30_13_15.gz?dl=0
+64_21_8_6	76323	SRG(64, 21, 8, 6)	GM with 4,n-4, infinite steps, from Bilin(2, 3, 2), 5.9M	Graphs in the Accepted Paper	https://www.dropbox.com/s/mfi3r6wgr7tmq9c/srgs_64_21_8_6.gz?dl=0
+64_27_10_12	8613977	SRG(64, 27, 10, 12)	GM with 4,n-4, 5 steps, from VO-(6, 2), 1.4G	Graphs in the Accepted Paper	https://www.dropbox.com/s/acgtfjvq14b4qyb/srgs_64_27_10_12.gz?dl=0
+64_28_12_12	11063360	SRG(64, 28, 12, 12)	GM with n,n-4, 5 steps, from VO+(6, 2), 1.5G	Graphs in the Accepted Paper	https://www.dropbox.com/s/jvhge5qmu1dkr9o/srgs_64_28_12_12.gz?dl=0
+70_27_12_9	78900835	SRG(70, 27, 12, 9)	GM with 4,n-4, 5 steps, from some S(2, 3, 21), 12G	Graphs in the Accepted Paper	https://www.dropbox.com/s/9fauxoda3tqk33n/srgs_70_27_12_9.gz?dl=0
+81_24_9_6	7441608	SRG(81, 24, 9, 6)	WQH with 3,3,n-6, 6 steps, from VNO+(4, 3), 1.3G	Graphs in the Accepted Paper	https://www.dropbox.com/s/prpxqnz4qyluj3e/srgs_81_24_9_6.gz?dl=0
+81_30_9_12	16565438	SRG(81, 30, 9, 12)	WQH with 3,3,n-6, infinite steps, from VNO-(4, 3), 1.8G	Graphs in the Accepted Paper	https://www.dropbox.com/s/0lcb4duka9dhc5t/srgs_81_30_9_12_clsr.gz?dl=0
+81_32_13_12	21392603	SRG(81, 32, 13, 12)	WQH with 3,3,n-6, 6 steps, from Bilin(2, 2, 3), 4.4G	Graphs in the Accepted Paper	https://www.dropbox.com/s/oqn5znws3rr9dp8/srgs_81_32_13_12.gz?dl=0
+85_20_3_5	237787	SRG(85, 20, 3, 5)	WQH with 4,4,n-8, 5 steps, from the unique GQ(4, 4), from Sp(4, 4), 59M	Graphs in the Accepted Paper	https://www.dropbox.com/s/tpa06s9wcsrcdz3/srgs_85_20_3_5.gz?dl=0
+96_19_2_4	178040	SRG(96, 19, 2, 4)	WQH with 4,4,n-8, 6 steps, from one of Haemers' graphs, from some Haemers(4), 43M	Graphs in the Accepted Paper	https://www.dropbox.com/s/kx6y27xxxx3in1y/srgs_96_19_2_4.gz?dl=0
+96_20_4_4	133005	SRG(96, 20, 4, 4)	WQH with 4,4,n-8, 6 steps, from unique GQ(5,3), from NO+(8, 2), 30M	Graphs in the Accepted Paper	https://www.dropbox.com/s/vrgltlklbraulsf/srgs_96_20_4_4.gz?dl=0
+85_20_3_5	3565042	SRG(85, 20, 3, 5)	WQH with 4,4,n-8, 6 steps, from unique GQ(4, 4), from Sp(4, 4), 785M	Bonus Graphs	https://www.dropbox.com/s/o3iofnd8l4nc5sy/srgs_85_20_3_5_ext.gz?dl=0
+96_19_2_4	1404192	SRG(96, 19, 2, 4)	WQH with 4,4,n-8, 7 steps, from one of Haemers' graphs, from some Haemers(4), 272M	Bonus Graphs	https://www.dropbox.com/scl/fi/6zjoeak9w0ee3q57nron1/srgs_96_19_2_4_ext.gz?rlkey=do82psr5rrvy7tc0ejkm84cio&st=y2kkwm7l&dl=0
+96_20_4_4	1226787	SRG(96, 20, 4, 4)	WQH with 4,4,n-8, 7 steps, from unique GQ(5,3), from NO+(8, 2), 284M	Bonus Graphs	https://www.dropbox.com/scl/fi/kajnr84gyxqbk5bnh0khc/srgs_96_20_4_4_ext.gz?rlkey=vmxu2xpli6h7ngd3idp7hykxo&st=jjopytss&dl=0
+120_63_30_36	4708637	SRG(120, 63, 30, 36)	GM with 4,n-4, 4 steps, from NO+(8,2), 2.8G	Bonus Graphs	https://www.dropbox.com/s/bdvmpwtvk0maowv/srgs_120_63_30_36.gz?dl=0
+125_28_3_7	8101	SRG(125, 28, 3, 7)	WQH with 5,5,n-10 from GQ(4, 6), 5 steps, 4.2M	Bonus Graphs	https://www.dropbox.com/scl/fi/30luwsy5crkx7rokrjku0/srg_125_28_3_7.gz?rlkey=dlxkf8aoosfb2qp9tt6li7cvz&dl=0
+63_30_13_15	281	4-vc SRG(63, 30, 13, 15)	92K, subset of the 13,505,292 graphs above	The 4-Vertex Condition	https://www.dropbox.com/s/0wi3m7s409u4f4o/srg_63_30_13_15_4vtx.g6?dl=0
+255_126_61_63	3374	4-vc SRG(255, 126, 61, 63)	18M, Kantor switching with Sp(8, 2) and point-hyperplane design	The 4-Vertex Condition	https://www.dropbox.com/s/rpe29j2gid0zsms/kantor_graphs_4_2?dl=0
+255_126_61_63	113519	4-vc SRG(255, 126, 61, 63)	79M, Kantor switching with Sp(8, 2) and 2-(15, 7, 3) design 3+12,3+12	The 4-Vertex Condition	https://www.dropbox.com/s/0ulpu90fcgc232x/kantor_graphs_4_2_dsgn_576.bz2?dl=0
+255_126_61_63	340730	4-vc SRG(255, 126, 61, 63)	288M, Kantor switching with Sp(8, 2) and 2-(15, 7, 3) design 7+8,1+14	The 4-Vertex Condition	https://www.dropbox.com/s/hqvya11hqo1wxow/kantor_graphs_4_2_dsgn_168_t1.bz2?dl=0
+255_126_61_63	328078	4-vc SRG(255, 126, 61, 63)	275M, Kantor switching with Sp(8, 2) and 2-(15, 7, 3) design 1+14,7+8	The 4-Vertex Condition	https://www.dropbox.com/s/dyiq3cygr0hxzk4/kantor_graphs_4_2_dsgn_168_t2.bz2?dl=0
+255_126_61_63	677460	4-vc SRG(255, 126, 61, 63)	580M, Kantor switching with Sp(8, 2) and 2-(15, 7, 3) design 1+6+8,1+6+8	The 4-Vertex Condition	https://www.dropbox.com/s/4ddr8h0mkjspvym/kantor_graphs_4_2_dsgn_96.bz2?dl=0
+364_120_38_40	252	4-vc SRG(364, 120, 38, 40)	2.7M, Kantor switching with Sp(6, 3)	The 4-Vertex Condition	https://www.dropbox.com/s/q98bh1zg2oqpsq5/kantor_graphs_3_3?dl=0
+364_120_38_40	252	SRG(364, 120, 38, 40)	2.7M, Kantor switching with O(6, 3), 4 graphs satisfy the 4-vertex condition	The 4-Vertex Condition	https://www.dropbox.com/s/yfswzdor5kwcuwf/kantor_graphs_3_3_par?dl=0
+40_12_2_4	9	SRG(40, 12, 2, 4)	4K, Kantor switching with Sp(4, 3) and the unique affine plane of order 3	More Kantor-type Switching	https://www.dropbox.com/s/x79cki4hzjrkjir/kantor_dam_guo_graphs_3?dl=0
+85_20_3_5	632026	SRG(85, 20, 3, 5)	80M, Kantor switching with Sp(4, 4) and the unique affine plane of order 4	More Kantor-type Switching	https://www.dropbox.com/s/vojerf9seairpdo/kantor_dam_guo_graphs_4.gz?dl=0
