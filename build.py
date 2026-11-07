@@ -348,11 +348,11 @@ out = (HTML
        .replace("__OURSTOTAL__", f"{ours_total:,}")
        .replace("__DATA__", data_json))
 
-with open(os.path.join(HERE, "index.html"), "w", encoding="utf-8") as f:
+with open(os.path.join(HERE, "v100.html"), "w", encoding="utf-8") as f:
     f.write(out)
 
 print(f"parsed {n_total} parameter sets: {n_exists} exist, {n_open} open, {n_none} non-existent, {n_unclass} unclassified(+)")
 print(f"our extensions: {len(ours_params)} params, {ours_total:,} new graphs")
 for r in ours_params:
     print(f"  SRG({r['v']},{r['k']},{r['lam']},{r['mu']}): +{r['ours']:,}  [{r['ours_aut']}]")
-print("wrote", os.path.join(HERE, "index.html"))
+print("wrote", os.path.join(HERE, "v100.html"))

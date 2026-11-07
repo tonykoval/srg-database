@@ -544,7 +544,7 @@ LIB_BIB = {
                  url="https://doc.sagemath.org/html/en/reference/graphs/sage/graphs/strongly_regular_db.html"),
     "hog": dict(authors="K. Coolsaet, S. D'hondt & J. Goedgebeur", title="House of Graphs 2.0: a database of interesting graphs and more", venue="Discrete Appl. Math. 325 (2023) 97–107", year=2023,
                 doi="10.1016/j.dam.2022.10.013"),
-    "srgdb_index": dict(authors="A. Kovaľ", title="SRG Database (v ≤ 100) and GM-switching catalogues", venue="github.com/tonykoval/srg-database, index.html and catalogs/ (2026)", year=2026,
+    "srgdb_index": dict(authors="A. Kovaľ", title="SRG Database (v ≤ 100) and GM-switching catalogues", venue="github.com/tonykoval/srg-database, v100.html and catalogs/ (2026)", year=2026,
                         url="https://github.com/tonykoval/srg-database"),
 }
 LIB_BIB_FIXES = {}

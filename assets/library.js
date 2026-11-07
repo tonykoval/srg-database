@@ -58,7 +58,7 @@
     ["references", "references.html", "References"],
     ["downloads", "downloads.html", "Downloads"],
     ["about", "about.html", "About"],
-    ["v100", "index.html", "v ≤ 100 (2026-05)"],
+    ["v100", "v100.html", "v ≤ 100 (2026-05)"],
     ["z3", "z3.html", "Order-3 automorphisms"]
   ];
   SRG.header = function () {

@@ -9,9 +9,9 @@ are not new.** The new **[SRG Library](library.html)** covers every parameter se
 
 Companion page **[`z3.html`](z3.html)** (2026-09-08): automorphisms of order 3 — every known SRG with an explicit order-3 action run through the orbit-matrix pipeline (filter, frame existence, generator, lift), and the fixed-point map of the open parameter sets (which f are impossible, closed, or open). Regenerate with `python3 build_z3.py`.
 
-Open **[`index.html`](index.html)** directly in a browser (it is fully self-contained — data
+The main page is the **[SRG Library](library.html)** (every parameter set up to v = 1300; https://tonykoval.github.io/srg-database/). The earlier v ≤ 100 table is **[`v100.html`](v100.html)**; open it directly in a browser (it is fully self-contained — data
 embedded, no server needed), or enable **GitHub Pages** (Settings → Pages → branch `main`) to
-browse it at `https://tonykoval.github.io/srg-database/`.
+browse it at `https://tonykoval.github.io/srg-database/v100.html`.
 
 ![preview of the database page](preview.png)
 
@@ -45,7 +45,7 @@ argument, and its honest limitations.
 
 ## Contents
 
-- **[`index.html`](index.html)** — the interactive cross-checked database.
+- **[`library.html`](library.html)** — the SRG Library (v ≤ 1300); **[`v100.html`](v100.html)** — the earlier cross-checked v ≤ 100 table.
 - **[`paper/`](paper/)** — the draft paper (PDF + LaTeX source): *Cascading Godsil–McKay
   Switching from Low-Symmetry Seeds: Constructing New Strongly Regular Graphs at Unclassified
   Parameters*.
@@ -54,7 +54,7 @@ argument, and its honest limitations.
 - **[`docs/`](docs/)** — construction notes and a survey of the count literature & download
   sources.
 - **[`data/`](data/)** — the Brouwer source tables and the SageMath existence verdicts, for audit.
-- `build.py` — the generator that produces `index.html` (run against the
+- `build.py` — the generator that produces `v100.html` (run against the
   [orbit-gen](https://github.com/tonykoval/orbit-gen) working tree).
 
 ## Provenance
