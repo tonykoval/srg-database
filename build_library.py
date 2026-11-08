@@ -57,7 +57,7 @@ IHRINGER_PAGE = "https://math.ihringer.org/srgs.php"
 
 # ---------------------------------------------------------------- exclusion rules
 # Rows for which the Library shows Brouwer's public status/comment and computed spectra ONLY.
-EXCLUDE_EXTRA_ROWS = {"300_117_60_36", "232_77_36_20"}   # + complements, see below
+EXCLUDE_EXTRA_ROWS = {"232_77_36_20"}   # + complements, see below  (300_117_60_36 released 2026-11-08: deposited, zenodo.24056552)
 EXCLUDE_EXTRA_V = {442}                                    # all 442 rows: Brouwer only
 PUBLIC_DEPOSIT_PREFIX = "10.5281/zenodo."
 LIT_ID_DROP = re.compile(r"^(other:|cite:|routine:|sweep:|brouwer-|spence-web|local:|email)", re.I)

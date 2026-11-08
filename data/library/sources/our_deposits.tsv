@@ -23,3 +23,4 @@ doi	kind	title	rows	counts	page
 10.5281/zenodo.23771335	existence	A strongly regular graph with parameters (833,416,207,208)	833_416_207_208	833_416_207_208:24	srg833.html
 10.5281/zenodo.23870797	existence	A strongly regular graph with parameters (288,112,36,48)	288_112_36_48	288_112_36_48:1	srg288_112.html
 10.5281/zenodo.23491895	rediscovery	Three further strongly regular graphs with parameters (243,22,1,2)	243_22_1_2		srg243_22.html
+10.5281/zenodo.24056552	nonexistence	There is no strongly regular graph with parameters (300,117,60,36)	300_117_60_36		
