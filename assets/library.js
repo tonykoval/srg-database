@@ -142,6 +142,8 @@
       h.push("<dt>Brouwer’s table</dt><dd>" + SRG.statusHtml(r.status) + ' · symbol “' + E(pr.status_raw || r.status) + '” · fetched ' + E(bdate) +
         ' · <a href="' + E(r.brouwer_page) + '">open Brouwer’s page for this row</a> (' + E(r.brouwer_page.split("/").pop()) + ")</dd>");
       if (r.status_old && r.status_old !== r.status) h.push("<dt>Change</dt><dd>" + E(r.status_old) + " → " + E(r.status) + " since Brouwer’s table of " + E((meta.brouwer_old_fetch || "").slice(0, 10)) + "</dd>");
+      if (r.update) h.push("<dt>Newer result</dt><dd>" + SRG.statusHtml(r.update.status) + " · " + E(r.update.text) +
+        ' · <a href="' + E(r.update.repo) + '">repository</a><br><span class="note">Not yet in Brouwer’s table as fetched by the Library; his live table is the reference.</span></dd>');
       h.push("<dt>Parameters</dt><dd><span class=mono>srg" + E(SRG.params(r.id)) + "</span>" + (r.primary ? "" : " (listed by Brouwer as the complement)") + "</dd>");
       if (other) h.push('<dt>Complement</dt><dd><a class="mono" href="' + SRG.rowHref(other.id) + '" data-row="' + E(other.id) + '">srg' + E(SRG.params(other.id)) + "</a></dd>");
       var sp = r.spectrum;

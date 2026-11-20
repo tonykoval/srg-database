@@ -188,11 +188,21 @@
   function changes() {
     var c = META.stats.changes || [];
     var el = document.getElementById("changes");
-    if (!c.length) { el.innerHTML = '<p class="note">No status changes between the two snapshots.</p>'; return; }
+    if (!c.length) { el.innerHTML = '<p class="note">No status changes between the two snapshots.</p>' + updatesHtml(); return; }
     el.innerHTML = '<p class="small">' + c.length + " parameter pairs changed status between Brouwer’s table of " + E((META.brouwer_old_fetch || "").slice(0, 10)) +
       " and " + E((META.brouwer_fetch || "").slice(0, 10)) + ':</p><div class="tablebox"><table><thead><tr><th>parameters</th><th>before</th><th>now</th></tr></thead><tbody>' +
       c.map(function (x) {
         return '<tr><td><a class="rowlink" href="' + SRG.rowHref(x.id) + '">' + E(SRG.params(x.id)) + "</a></td><td>" + SRG.statusHtml(x.old) + "</td><td>" + SRG.statusHtml(x.new) + "</td></tr>";
+      }).join("") + "</tbody></table></div>" + updatesHtml();
+  }
+  function updatesHtml() {
+    var u = META.stats.updates || [];
+    if (!u.length) return "";
+    return '<p class="small" style="margin-top:12px">' + u.length + " parameter pairs realised after Brouwer’s table of " + E((META.brouwer_fetch || "").slice(0, 10)) +
+      ' in public repositories of other authors (listed with permission; graphs checked by the Library; Brouwer’s live table is the reference):</p><div class="tablebox"><table><thead><tr><th>parameters</th><th>Brouwer (snapshot)</th><th>newer result</th><th>source</th></tr></thead><tbody>' +
+      u.map(function (x) {
+        return '<tr><td><a class="rowlink" href="' + SRG.rowHref(x.id) + '">' + E(SRG.params(x.id)) + "</a></td><td>" + SRG.statusHtml(x.old) + "</td><td>" + SRG.statusHtml(x.new) +
+          '</td><td><a href="' + E(x.repo) + '">' + E(x.repo.replace("https://", "")) + "</a></td></tr>";
       }).join("") + "</tbody></table></div>";
   }
 

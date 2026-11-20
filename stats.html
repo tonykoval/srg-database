@@ -57,7 +57,7 @@
       ["exact number of graphs (complete classification)", hk.complete || 0],
       ["a published lower bound greater than one", hk.lower || 0],
       ["exists, no count recorded (at least one)", hk.exists || 0]], [1]);
-    var srcName = { brouwer: "Brouwer’s table (! / N!)", spence: "Spence’s collection", ihringer: "Ihringer’s collection", ours: "Kovaľ deposits (Zenodo)", srgdb: "srg-database switching catalogues", literature: "literature (curated)" };
+    var srcName = { brouwer: "Brouwer’s table (! / N!)", spence: "Spence’s collection", ihringer: "Ihringer’s collection", ours: "Kovaľ deposits (Zenodo)", srgdb: "srg-database switching catalogues", literature: "literature (curated)", external: "public repositories of other authors (checked by the Library)" };
     document.getElementById("srcs").innerHTML = table(["source", "pairs"], Object.keys(s.count_sources).map(function (k) { return [E(srcName[k] || k), s.count_sources[k]]; }), [1]);
     // sage vs brouwer per set
     var F = {}; idx.fields.forEach(function (f, i) { F[f] = i; });

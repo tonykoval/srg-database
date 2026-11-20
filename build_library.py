@@ -769,6 +769,23 @@ def main():
         counts[c["row"]].append(dict(n=int(c["n"]), kind=c["kind"], src="literature", bib="lit:" + c["key"],
                                      note=c["note"], url=("https://doi.org/" + c["doi"]) if c.get("doi") else (c["url"] or "https://arxiv.org/abs/" + c["arxiv"])))
     lit_counts_bib = {c["key"]: c for c in read_tsv(os.path.join(SRC, "counts_literature.tsv"))}
+    # public repositories of other authors, listed with permission and checked by the Library (linked, not rehosted)
+    ext_repos = read_tsv(os.path.join(SRC, "external_repos.tsv"))
+    ext_bib = collections.OrderedDict()
+    ext_update = {}
+    for c in ext_repos:
+        if not re.match(r"^https://github\.com/", c["repo"]):
+            warnings.append("external repository without a public link dropped: %r" % c)
+            continue
+        ext_bib.setdefault(c["key"], c)
+        counts[c["row"]].append(dict(n=int(c["n"]), kind="lower", src="external", bib="ext:" + c["key"],
+                                     note="%s (checked by the Library at commit %s, %s)" % (c["note"], c["commit"], c["checked"]),
+                                     url=c["repo"]))
+        if c.get("realised") == "1":
+            ext_update[c["row"]] = dict(status="+", key=c["key"], repo=c["repo"], commit=c["commit"], n=int(c["n"]),
+                                        text="realised by %s, public repository %s (Nov. 2026), after Brouwer's snapshot used here; "
+                                             "%d pairwise non-isomorphic graph%s checked exactly by the Library (commit %s)" % (
+                                                 c["authors"], c["repo"].replace("https://", ""), int(c["n"]), "" if c["n"] == "1" else "s", c["commit"]))
 
     # move counts to the primary id of the pair
     pcounts = collections.defaultdict(list)
@@ -787,6 +804,12 @@ def main():
             pcounts[x] = [c for c in pcounts[x] if c["src"] == "brouwer"]
 
     # headline count per pair + consistency checks
+    upd_pair = {}
+    for x, u in ext_update.items():
+        if x in byid:
+            upd_pair[x if byid[x]["primary"] else byid[x]["of"]] = u
+        else:
+            warnings.append("external update for %s which is not in Brouwer's table" % x)
     for r in rows:
         if not r["primary"]:
             continue
@@ -807,7 +830,7 @@ def main():
             head = dict(label="≥ 1", n=1, kind="exists")
         else:
             head = dict(label="?", n=None, kind="open")
-        if r["status"] == "?" and (comp or low):
+        if r["status"] == "?" and (comp or low) and r["id"] not in upd_pair:
             warnings.append("open row %s has counts %s" % (r["id"], lst))
         r["head"] = head
         r["counts"] = lst
@@ -904,6 +927,11 @@ def main():
         for o in ours.get(x, []):
             if o["kind"] in ("existence", "uniqueness", "rediscovery"):
                 downloads[x].append(dict(label="Zenodo %s (paper + data archive)" % o["doi"].split(".")[-1], url="https://doi.org/" + o["doi"], src="ours"))
+        for c in ext_repos:
+            if c["row"] in ids:
+                lab = "D. Plummer: %s (graph6 files in the author's repository; linked, not copied)" % c["repo"].replace("https://", "")
+                if not any(d["url"] == c["repo"] for d in downloads[x]):
+                    downloads[x].append(dict(label=lab, url=c["repo"], src="external"))
         if x in ("50_21_8_9", "49_24_11_12", "57_24_11_9"):
             downloads[x].append(dict(label="srg-database catalogs/srg_constructed_catalogs.tar.gz (graph6; samples for 49 and 57)",
                                      url="catalogs/srg_constructed_catalogs.tar.gz", src="srgdb"))
@@ -982,7 +1010,14 @@ def main():
                                  doi=dm.group(1) if dm else "", arxiv=m.group(1) if m else "", urls=[] if (m or dm) else [b["url"]],
                                  brouwer_anchor="", email=False, rows=[])
 
+    for k, c in ext_bib.items():
+        bib["e-" + k] = dict(id="e-" + k, key=k, src="literature", authors=c["authors"], title=c["title"],
+                             text="%s, %s, public repository (code, graphs and draft paper), %s, %s." % (c["authors"], c["title"], c["repo"].replace("https://", ""), c["year"]),
+                             year=int(c["year"]), doi="", arxiv="", urls=[c["repo"]], brouwer_anchor="", email=False, rows=[])
+
     def bib_id(token):
+        if token.startswith("ext:"):
+            return "e-" + token[4:]
         if token.startswith("dep:"):
             return dep_alias.get("d-" + token[4:], "d-" + token[4:])
         if token.startswith("lit:"):
@@ -1026,6 +1061,7 @@ def main():
                    seed=None if ex else seed.get(x),
                    downloads=downloads.get(pr, []) if not ex else [d for d in downloads.get(pr, []) if d["src"] in ("spence", "ihringer")],
                    restricted=ex,
+                   update=None if ex else upd_pair.get(pr),
                    status_old=old_status.get(x))
         if ex:
             rec["counts"] = [c for c in r["counts"] if c["src"] == "brouwer"]
@@ -1101,7 +1137,9 @@ def main():
                  with_downloads=sum(1 for p in prim if p["downloads"]),
                  sage=dict(collections.Counter((full[x]["sage"] or {}).get("existence", "n/a") for x in full)),
                  family_checks={k: dict(ok=v[0], bad=v[1], bad_examples=v[2][:10]) for k, v in fam_check.items()},
-                 restricted=sorted(excluded))
+                 restricted=sorted(excluded),
+                 updates=[dict(id=x, old=byid[x]["status"], new=u["status"], text=u["text"], repo=u["repo"])
+                          for x, u in sorted(upd_pair.items(), key=lambda z: tuple(int(t) for t in z[0].split("_"))) if x not in excluded])
 
     # ---- write
     def write(name, obj):
