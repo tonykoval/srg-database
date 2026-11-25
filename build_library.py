@@ -36,7 +36,7 @@ def P(path):
 
 
 DEFAULTS = dict(
-    brouwer=r"D:\srg-library\external\brouwer\2026-11-07",
+    brouwer=r"D:\srg-library\external\brouwer\2026-11-25",
     brouwer_old=r"C:\Users\akova\IdeaProjects\orbit-gen\out\brouwer_check_1013",
     spence=r"D:\srg-library\external\spence",
     ihringer=r"D:\srg-library\external\ihringer\srgs.php.html",

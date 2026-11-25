@@ -44,7 +44,7 @@ def get(url, method="GET", accept=None):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--brouwer", default=r"D:\srg-library\external\brouwer\2026-11-07")
+    ap.add_argument("--brouwer", default=r"D:\srg-library\external\brouwer\2026-11-25")
     ap.add_argument("--online", action="store_true")
     a = ap.parse_args()
     fails = []
