@@ -2,7 +2,8 @@
 # Only deposited, public results. rows = primary rows of Brouwer's table the deposit settles or concerns (complements follow automatically).
 # counts = graphs contained in the deposit (lower bounds, never classifications unless kind = uniqueness), from srg-open-cases graphs.html / papers.html.
 # page = the srg-open-cases page of the result. Extra rows of the BMV paper come from the programme ledger (grade PROVED-OURS-AUDITED with this DOI).
-doi	kind	title	rows	counts	page
+# 2026-11-27 (SYNC-1127): joint deposits are listed here too, with the authors in the optional last column (empty = A. Kovaľ): 10.5281/zenodo.24480463 is joint with D. Plummer (the 442 rows stay Brouwer-only in the Library, EXCLUDE_EXTRA_V, so no row data is shown from it). A new version of a deposit gets its own line (version DOI) next to the line of the earlier version; the row list stays on the earlier line (the ledger cites that DOI).
+doi	kind	title	rows	counts	page	authors
 10.5281/zenodo.23209705	nonexistence	There is no strongly regular graph with parameters (69,20,7,5)	69_20_7_5		srg69.html
 10.5281/zenodo.23210773	nonexistence	There is no strongly regular graph with parameters (99,42,21,15)	99_42_21_15		srg99_42.html
 10.5281/zenodo.23210908	nonexistence	There is no strongly regular graph with parameters (105,52,21,30)	105_52_21_30		srg105.html
@@ -24,3 +25,5 @@ doi	kind	title	rows	counts	page
 10.5281/zenodo.23870797	existence	A strongly regular graph with parameters (288,112,36,48)	288_112_36_48	288_112_36_48:1	srg288_112.html
 10.5281/zenodo.23491895	rediscovery	Three further strongly regular graphs with parameters (243,22,1,2)	243_22_1_2		srg243_22.html
 10.5281/zenodo.24056552	nonexistence	There is no strongly regular graph with parameters (300,117,60,36)	300_117_60_36		
+10.5281/zenodo.24480463	existence	Strongly regular graphs on 442 points from line pieces in two conference two-graphs	442_210_99_100		index.html#r442	D. Plummer and A. Kovaľ
+10.5281/zenodo.24449397	nonexistence	The Bannai–Munemasa–Venkov lattice method for strongly regular graphs: a uniform discriminant-form condition and new nonexistence results (version 1.2, 22 Nov 2026; new version of 10.5281/zenodo.23281359)			bmv.html

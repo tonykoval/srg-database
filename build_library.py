@@ -979,8 +979,9 @@ def main():
         if same:
             dep_alias["d-" + d["doi"]] = same[0]
             continue
-        bib["d-" + d["doi"]] = dict(id="d-" + d["doi"], key=d["doi"], src="deposit", authors="A. Kovaľ", title=d["title"],
-                                    text="A. Kovaľ, %s, preprint with data, Zenodo, 2026, doi:%s." % (d["title"], d["doi"]),
+        dep_authors = (d.get("authors") or "").strip() or "A. Kovaľ"   # optional 7th column (joint deposits), 2026-11-27
+        bib["d-" + d["doi"]] = dict(id="d-" + d["doi"], key=d["doi"], src="deposit", authors=dep_authors, title=d["title"],
+                                    text="%s, %s, preprint with data, Zenodo, 2026, doi:%s." % (dep_authors, d["title"], d["doi"]),
                                     year=2026, doi=d["doi"], arxiv="", urls=[OPEN_CASES + d["page"]] if d["page"] else [], brouwer_anchor="",
                                     email=False, rows=[])
     alias = {}
